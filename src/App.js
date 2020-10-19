@@ -5,7 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
+      <Test />
       <header className="App-header">
+        
+        
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
@@ -19,6 +22,17 @@ function App() {
           Learn React
         </a>
       </header>
+    </div>
+  );
+}
+
+const Test = () => {
+  return (
+    <div>
+      1234
+        <h1>IronDimk</h1>
+        <p>Loremlorem lorem lorem</p>
+        <a href="#">Clicked</a>
     </div>
   );
 }
