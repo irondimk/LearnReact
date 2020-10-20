@@ -1,0 +1,27 @@
+
+nav{
+    background: green;
+    padding: 10px;
+  }
+  
+  ul{
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li{
+    margin-bottom: 5px;
+  }
+  
+  a{
+    text-decoration: none;
+    color: white;
+    font-size: 19px;
+    display: block;
+    padding: 3px;
+  }
+
+  a:hover{
+    background: blue;
+  }
