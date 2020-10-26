@@ -5,14 +5,15 @@ import './components/null.css';
 import Header from './components/Header/Header.jsx';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-
+import Dialogs from './components/Dialogs/Dialogs'
 function App() {
   return (
     <div className="main">
       <Header/>
       <div className="wrapper center">
         <Navbar/>
-        <Profile/>
+        <Dialogs />
+        {/* <Profile/> */}
       </div>
     </div>
   );

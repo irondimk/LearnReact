@@ -14,7 +14,8 @@ const Post = (props) => {
 
       </div>
       <div className={classes.like}>
-        <a href=""><img className={classes.likePicture} src="https://pngimg.com/uploads/like/like_PNG88.png" alt="" /></a>
+        <a href="#"><img className={classes.likePicture} src="https://pngimg.com/uploads/like/like_PNG88.png" alt="" /></a>
+        <p>Likes is {props.likescount} </p>
       </div>
     </div>
   );

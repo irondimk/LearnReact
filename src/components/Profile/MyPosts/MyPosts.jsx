@@ -12,8 +12,8 @@ const MyPosts = () => {
               <button>Add post</button>
             </div>
             <div>
-              <Post message="Npm, npx, react, jsx learn" avasrc="https://im0-tub-ru.yandex.net/i?id=b57ab827966c1edd0748c1eb53fe6a2e&n=13&exp=1"/>
-              <Post message="First post this" avasrc="https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"/>
+              <Post likescount="11" message="Npm, npx, react, jsx learn" avasrc="https://im0-tub-ru.yandex.net/i?id=b57ab827966c1edd0748c1eb53fe6a2e&n=13&exp=1"/>
+              <Post likescount="9" message="First post this" avasrc="https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"/>
               
             </div>
           </div>
