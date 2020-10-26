@@ -1,0 +1,25 @@
+.content{
+    width: 100%;
+    margin-left: 10px;
+  }
+  
+  .fon{
+    width: 100%;
+    height: 120px;
+  }
+
+  
+  .avatar__user{
+    width: 50px;
+
+  }
+
+  .post{
+    display: flex;
+    text-align: justify;
+    margin-bottom: 10px;
+  }
+
+  .text{
+    padding: 5px;
+  }
