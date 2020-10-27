@@ -5,17 +5,23 @@ import './components/null.css';
 import Header from './components/Header/Header.jsx';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import Dialogs from './components/Dialogs/Dialogs'
+import Dialogs from './components/Dialogs/Dialogs';
+import { BrowserRouter, Route } from 'react-router-dom';
+
+
 function App() {
   return (
-    <div className="main">
-      <Header/>
-      <div className="wrapper center">
-        <Navbar/>
-        <Dialogs />
-        {/* <Profile/> */}
+    <BrowserRouter>
+      <div className="main">
+        <Header />
+        <div className="wrapper center">
+          <Navbar />
+          <Route path="/profile" component={Profile} />
+          <Route path="/dialogs" component={Dialogs} />
+        </div>
       </div>
-    </div>
+    </BrowserRouter>
+
   );
 }
 
