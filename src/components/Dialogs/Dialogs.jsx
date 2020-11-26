@@ -1,10 +1,15 @@
 import React from 'react';
 import classes from './Dialogs.module.css';
-
-const Dialogs = () => {
+import Users from './Users/Users.jsx';
+import Messages from './Messages/Messages.jsx';
+const Dialogs = (props) => {
     return (
         <div>
-            Dialogs
+            <h2>Dialogs</h2>
+            <div className={classes.content}>
+                <Users dialogusers={props.dialogusers}/>
+                <Messages />
+            </div>
         </div>
     );
 }

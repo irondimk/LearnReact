@@ -1,0 +1,29 @@
+.content{
+    border-right: 1px solid#bebebe;
+    margin-right: 30px;
+}
+
+.bla_usr{
+   padding: 20px;
+}
+
+.bla_usr_item{
+    list-style-type: disc;
+    padding-left: 10px;
+    margin-bottom: 50px;
+}
+
+.bla_usr_item_selected{
+    background: green;
+}
+
+.bla_usr_link{
+    display: block;
+    padding: 30px 75px;
+    font-size: 20px;
+    color: #000000;
+}
+
+.bla_usr_link:hover{
+    background: green;
+}

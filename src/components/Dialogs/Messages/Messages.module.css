@@ -1,0 +1,30 @@
+.content{
+    
+}
+
+.message{
+    display: flex;
+    margin-bottom: 50px;
+    
+}
+
+
+.user_send{
+    margin-right: 30px;
+}
+.user_send_pic_img{
+    width: 70px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.user_send_name{
+    text-align: center;
+}
+
+
+.user_message{
+    border: 1px solid #bebebe;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+}
