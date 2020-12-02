@@ -7,8 +7,8 @@ const Dialogs = (props) => {
         <div>
             <h2>Dialogs</h2>
             <div className={classes.content}>
-                <Users dialogusers={props.dialogusers}/>
-                <Messages />
+                <Users dialogusers={props.dialogusers.usersdialogs}/>
+                <Messages MessagesData={props.dialogusers.MessagesData}/>
             </div>
         </div>
     );
