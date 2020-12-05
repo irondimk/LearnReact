@@ -20,8 +20,8 @@ function App(props) {
         <Header/>
         <div className="wrapper center">
           <Navbar />
-          <Route path="/profile" render={() => <Profile pst={props.appState.profilePage} addPost={props.addPost} editTextNewPost={props.editTextNewPost}/>} />
-          <Route path="/dialogs" render={() => <Dialogs dialogusers={props.appState.dialogsPage}/>} />
+          <Route path="/profile" render={() => <Profile pst={props.state.profilePage} dispatch={props.dispatch}/>} />
+          <Route path="/dialogs" render={() => <Dialogs dialogsPage={props.state.dialogsPage} dispatch={props.dispatch}/>} />
           <Route path="/news" render={() => <News/>} />
           <Route path="/music" render={() => <Music/>} /> 
           <Route path="/settings" render={() => <Settings/>} />

@@ -1,10 +1,23 @@
 import * as serviceWorker from './serviceWorker';
-import State from './redux/state';
-import {rerender} from './render';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
+import store from './redux/state';
 
-rerender(State);
+let rerender = (storeInFunc) =>{
+  ReactDOM.render(
+    <React.StrictMode>
+      <App state = {storeInFunc.getState()} dispatch={storeInFunc.dispatch.bind(storeInFunc)}/>
+    </React.StrictMode>,
+    document.getElementById('root')
+  );
+}
 
 
+rerender(store);
+store.subscribe(rerender);
+//editTextNewPost={storeInFunc.editTextNewPost.bind(storeInFunc)}
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA

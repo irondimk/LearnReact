@@ -11,7 +11,7 @@ const DialogUser = (props) => {
 
 
 const Users = (props) => {
-    let DialogUsers = props.dialogusers.map(
+    let DialogUsers = props.dialogsPage.map(
         (elem) => {
             return <DialogUser id={elem.id} name={elem.name}/>
         }

@@ -4,8 +4,7 @@
 
 .message{
     display: flex;
-    margin-bottom: 50px;
-    
+    margin-bottom: 40px;
 }
 
 
@@ -13,7 +12,7 @@
     margin-right: 30px;
 }
 .user_send_pic_img{
-    width: 70px;
+    width: 60px;
     border-radius: 50%;
     margin-bottom: 10px;
 }
@@ -27,4 +26,27 @@
     color: black;
     border-radius: 5px;
     padding: 10px;
+    width: 100%;
+}
+
+.newMessageBox{
+    border: 1px solid #bebebe;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.sendMessage{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.sendMessage:hover{
+    background: green;
+    color: #FFFFFF;
 }
