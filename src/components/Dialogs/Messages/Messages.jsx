@@ -1,6 +1,6 @@
 import React from 'react';
 import classes from './Messages.module.css';
-import {editTextNewMessageActionCreate, SendMessageActionCreate} from './../../../redux/state';
+import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
 
 let MessageDialog = (props) => {
     return (
@@ -31,10 +31,10 @@ const Messages = (props) => {
     })
     let newMessageElement = React.createRef();
 
-    let editNewMessageText = ()=> {
+    let editNewMessageText = () => {
         props.dispatch(editTextNewMessageActionCreate(newMessageElement.current.value));
     }
-    let sendMessage = ()=> {
+    let sendMessage = () => {
         props.dispatch(SendMessageActionCreate())
     }
     return (
