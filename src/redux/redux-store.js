@@ -9,6 +9,4 @@ let reducers = combineReducers({profilePage:profileReducer, dialogsPage:dialogsR
 let store = createStore(reducers);
 
 
-
-
 export default store;

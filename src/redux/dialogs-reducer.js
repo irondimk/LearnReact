@@ -21,24 +21,31 @@ let initialState = {
   newMessageText: 'iron'
 }
 
+
 const dialogsReducer = (state = initialState, action)=> {
     switch(action.type){
         case EDIT_TEXT_NEW_MESSAGE:{
-          state.newMessageText = action.messageText;
-          break;
+          let newState = {...state};
+          newState.usersdialogs = [...state.usersdialogs];
+          newState.MessagesData = [...state.MessagesData];
+          newState.newMessageText = action.messageText;
+          return newState;
         }
         case SEND_MESSAGE: {
+          let newState = {...state};
+          newState.usersdialogs = [...state.usersdialogs];
+          newState.MessagesData = [...state.MessagesData];
             let newMessage = {
               src: "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png",
               username: "Me",
-              message: state.newMessageText
+              message: newState.newMessageText
             }
-            state.MessagesData.push(newMessage);
-            state.newMessageText = '';
-          break;
+            newState.MessagesData.push(newMessage);
+            newState.newMessageText = '';
+            return newState;
         }
+        default: return state;
       }
-    return state;
 }
 
 

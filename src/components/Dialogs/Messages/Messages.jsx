@@ -32,10 +32,12 @@ const Messages = (props) => {
     let newMessageElement = React.createRef();
 
     let editNewMessageText = () => {
-        props.dispatch(editTextNewMessageActionCreate(newMessageElement.current.value));
+        props.updateTextNewMessage(newMessageElement.current.value);
+        // props.dispatch(editTextNewMessageActionCreate(newMessageElement.current.value));
     }
     let sendMessage = () => {
-        props.dispatch(SendMessageActionCreate())
+        props.sendMessage();
+        // props.dispatch(SendMessageActionCreate())
     }
     return (
         <div>

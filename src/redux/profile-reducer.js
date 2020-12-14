@@ -11,23 +11,28 @@ let initialState = {
   }
 
 const profileReducer = (state = initialState, action) => {
+    
     switch (action.type) {
         case ADD_POST: {
+            let newState = {...state  };
+            newState.posts = [...state.posts];
             let newPost = {
                 likes: 0,
-                message: state.newPostText,
+                message: newState.newPostText,
                 avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
             }
-            state.posts.push(newPost);
-            state.newPostText = '';
-            break;
+            newState.posts.push(newPost);
+            newState.newPostText = '';
+            return newState;
         }
         case EDIT_TEXT_NEW_POST: {
-            state.newPostText = action.postText;
-            break;
+            let newState = {...state  };
+            newState.newPostText = action.postText;
+            return newState;
         }
+        default: return state;
     }
-    return state;
+    
 }
 
 export const AddPostActionCreate = () => {

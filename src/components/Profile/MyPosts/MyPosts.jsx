@@ -4,8 +4,7 @@ import Post from './Post/Post.jsx';
 import {AddPostActionCreate, editTextNewPostActionCreate} from './../../../redux/profile-reducer';
 
 const MyPosts = (props) => {
-
-  let jsxPosts = props.pst.map(
+  let jsxPosts = props.profilePage.posts.map(
     (elem) => {
       return <Post likescount={elem.likes} message={elem.message} avasrc={elem.avatarsrc} />
     }
@@ -14,18 +13,20 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    props.dispatch(AddPostActionCreate());
+    // props.dispatch(AddPostActionCreate());
+    props.addPost();
   }
 
   let onPostChange = () => {
-    props.dispatch(editTextNewPostActionCreate(newPostElement.current.value));
+    // props.dispatch(editTextNewPostActionCreate(newPostElement.current.value));
+    props.updateNewPostText(newPostElement.current.value);
   }
 
   return (
     <div className={classes.posts}>
       My posts
       <div>
-        <textarea onChange={onPostChange} value={props.newPostText} ref={newPostElement} name="" id="" cols="30" rows="3"></textarea>
+        <textarea onChange={onPostChange} value={props.profilePage.newPostText} ref={newPostElement} name="" id="" cols="30" rows="3"></textarea>
         <button onClick={addPost}>Add post</button>
       </div>
       <div>
