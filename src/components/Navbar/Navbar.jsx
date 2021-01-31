@@ -12,6 +12,7 @@ function Navbar() {
                 <li className={classes.item}><NavLink to="/news" activeClassName={classes.activelink} className={classes.link}>News</NavLink></li>
                 <li className={classes.item}><NavLink to="/music" activeClassName={classes.activelink} className={classes.link}>Music</NavLink></li>
                 <li className={classes.item}><NavLink to="/settings" activeClassName={classes.activelink} className={classes.link}>Settings</NavLink></li>
+                <li className={classes.item}><NavLink to="/find-users" activeClassName={classes.activelink} className={classes.link}>Find Users</NavLink></li>
             </ul>
         </nav>
     );

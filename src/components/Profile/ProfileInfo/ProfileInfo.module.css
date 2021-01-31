@@ -1,0 +1,20 @@
+.wrapper{
+    display: flex;
+    justify-content:  space-between;
+}
+
+.info{
+
+}
+
+.fon{
+    width: 100%;
+}
+
+.name{
+    font-weight: 600;
+}
+
+.about{
+    
+}

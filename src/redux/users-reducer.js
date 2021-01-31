@@ -1,0 +1,110 @@
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SETUSERS = 'SET_USERS';
+const SETCOUNT = 'SET_COUNT';
+const SETCURRENTPAGE = 'SET_CURRENT_PAGE';
+const TOGGLEPRELOADER = 'TOGGLE_PRELOADER';
+
+let initialState = {
+    users: [],
+    totalCount: 0,
+    pageSize: 5,
+    currentPage: 1,
+    isPreloaderShow: false
+}
+
+const usersReducer = (state = initialState, action) => {
+    switch (action.type) {
+      
+        case FOLLOW: {
+            let newState = {
+                ...state, users:
+                    state.users.map((elem) => {
+                        if (elem.id == action.userid) {
+                            elem.followed = !elem.followed;
+                            return (elem);
+                        }
+                        return (elem);
+                    })
+            }
+            return newState;
+        }
+
+        case UNFOLLOW: {
+            let newState = {
+                ...state, users:
+                    state.users.map((elem) => {
+                        if (elem.id == action.userid) {
+                            elem.followed = !elem.followed;
+                            return (elem);
+                        }
+                        return (elem);
+                    })
+            }
+            return newState;
+        }
+        case SETUSERS: {
+            let newState = {...state, users: action.users}
+            return newState;
+        }
+        case SETCOUNT: {
+            let newState = {...state, totalCount: action.count}
+            return newState;
+        }
+        case SETCURRENTPAGE: {
+            let newState = {...state, currentPage: action.currentPage}
+            return newState;
+        }
+        case TOGGLEPRELOADER: {
+            let newState = {...state, isPreloaderShow: action.isPreloaderShow}
+            return newState;
+        }
+        default: return state;
+    }
+
+}
+
+export const togglePreloaderAC = (value) => {
+    return{
+        type : TOGGLEPRELOADER,
+        isPreloaderShow : value
+    }
+}
+
+export const setCurrentPageAC = (value)=> {
+    return{
+        type : SETCURRENTPAGE,
+        currentPage : value
+    }
+}
+
+export const setCountUsersAC = (value)=> {
+    return{
+        type : SETCOUNT,
+        count : value
+    }
+}
+
+export const followAC = (id) => {
+    return {
+        userid: id,
+        type: FOLLOW
+    }
+}
+
+export const unfollowAC = (id) => {
+    return {
+        userid: id,
+        type: UNFOLLOW
+    }
+}
+
+
+export const setUsersAC = (users) => {
+    return {
+        users: users,
+        type: SETUSERS
+    }
+}
+
+export default usersReducer;
