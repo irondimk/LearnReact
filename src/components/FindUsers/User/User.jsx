@@ -13,7 +13,10 @@ let User = (props) => {
         <div className={classes.userInSearch}>
             <div>
                 <NavLink to={'profile/' + props.id}>
-                    <img src={props.avatarSrc} alt="" className={classes.avatar}/>
+                {props.photos.small ? <img src={props.photos.small} alt="" className={classes.avatar}/>
+                :  <img src={props.avatarSrc} alt="" className={classes.avatar}/>
+                }
+                    {/* <img src={props.avatarSrc} alt="" className={classes.avatar}/> */}
                 </NavLink>
                 {
                     props.followed ?  <a href="#" className={classes.unfollow} onClick={()=> {unfollow(props.id)}}>Unfollowed</a> : <a href="#" className={classes.follow} onClick={()=> {follow(props.id)}}>Followed</a>
