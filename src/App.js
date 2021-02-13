@@ -11,12 +11,13 @@ import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
+import HeaderContainer from './components/Header/HeaderContainer';
 
 function App(props) {
   return (
         <BrowserRouter>
         <div className="main">
-        <Header/>
+        <HeaderContainer/>
         <div className="wrapper center">
           <Navbar />
           <Route path='/profile/:userId?' render={() => <ProfileContainer/>} />

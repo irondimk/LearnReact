@@ -2,6 +2,7 @@ import axios from 'axios';
 import React from 'react';
 import FindUsers from './FindUsers';
 import Preloader from './../Preloader/Preloader';
+import { getUsers, userAPI } from '../../api/api';
 
 class FindUsersAPIComponent extends React.Component {
     
@@ -12,21 +13,41 @@ class FindUsersAPIComponent extends React.Component {
    
     componentDidMount(){
         this.props.togglePreloader(true);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`).then(response => {
+        
+        userAPI.getUsers(this.props.currentPage, this.props.pageSize).then(response => {
             this.props.togglePreloader(false);        
-            this.props.setUsers(response.data.items);
-                this.props.setCount(response.data.totalCount);
+            this.props.setUsers(response.items);
+                this.props.setCount(response.totalCount);
             });
+
+
+        // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
+        // {
+        //     withCredentials: true
+        // }).then(response => {
+        //     this.props.togglePreloader(false);        
+        //     this.props.setUsers(response.data.items);
+        //         this.props.setCount(response.data.totalCount);
+        //     });
     }
 
     pageChanged = (numberPage) =>{
         this.props.togglePreloader(true);
         this.props.setCurrentPage(numberPage);
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${numberPage}&count=${this.props.pageSize}`).then(response => {
+        userAPI.getUsers(numberPage, this.props.pageSize).then(response => {
             this.props.togglePreloader(false);   
-             this.props.setUsers(response.data.items);
-            this.props.setCount(response.data.totalCount);
+             this.props.setUsers(response.items);
+            this.props.setCount(response.totalCount);
         });
+
+        // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${numberPage}&count=${this.props.pageSize}`,
+        // {
+        //     withCredentials: true
+        // }).then(response => {
+        //     this.props.togglePreloader(false);   
+        //      this.props.setUsers(response.data.items);
+        //     this.props.setCount(response.data.totalCount);
+        // });
     }
 
     render() {

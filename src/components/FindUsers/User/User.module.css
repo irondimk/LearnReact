@@ -23,6 +23,13 @@
     color: #FFFFFF;
 }
 
+.disabled{
+    display: block;
+    padding: 5px 10px;
+    background: rgb(121, 121, 121);
+    color: #FFFFFF;
+}
+
 .unfollow:hover{
     background: red;
 }

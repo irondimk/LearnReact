@@ -4,13 +4,15 @@ const SETUSERS = 'SET_USERS';
 const SETCOUNT = 'SET_COUNT';
 const SETCURRENTPAGE = 'SET_CURRENT_PAGE';
 const TOGGLEPRELOADER = 'TOGGLE_PRELOADER';
+const TOGGLE_IS_FOLLOWING_PROCESS = 'TOGGLE_IS_FOLLOWING_PROCESS';
 
 let initialState = {
     users: [],
     totalCount: 0,
     pageSize: 5,
     currentPage: 1,
-    isPreloaderShow: false
+    isPreloaderShow: false,
+    isFollowingProcess: false
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -59,9 +61,20 @@ const usersReducer = (state = initialState, action) => {
             let newState = {...state, isPreloaderShow: action.isPreloaderShow}
             return newState;
         }
+        case TOGGLE_IS_FOLLOWING_PROCESS: {
+            let newState = {...state, isFollowingProcess: action.isFollowingProcess}
+            return newState;
+        }
         default: return state;
     }
 
+}
+
+export const toggleIsFollowingProcessAC = (value) => {
+    return{
+        type : TOGGLE_IS_FOLLOWING_PROCESS,
+        isFollowingProcess : value
+    }
 }
 
 export const togglePreloaderAC = (value) => {

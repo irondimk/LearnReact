@@ -8,4 +8,15 @@
     padding: 10px;
     width: 900px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .loginText{
+    display: block;
+    padding: 5px 10px;
+    background: rgb(80, 79, 79);
+    color: green;
+    font-weight: 600;
+    font-size: 24px;
   }
