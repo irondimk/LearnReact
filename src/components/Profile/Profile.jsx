@@ -4,6 +4,7 @@ import './../null.css';
 // import MyPosts from './MyPosts/MyPosts';
 import MyPostsContainer from './MyPosts/MyPostsContainer';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
+import { Redirect } from 'react-router-dom';
 const Profile = (props) => {
     return (
         <div className={classes.content}>

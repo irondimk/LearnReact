@@ -2,21 +2,16 @@ import React from 'react';
 import Profile from './Profile';
 import axios from 'axios';
 import {connect} from "react-redux";
-import {setUserProfile} from './../../redux/profile-reducer';
+import {setUserProfile, openUserProfile} from './../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
+import { userAPI } from '../../api/api';
+import { LoginHOC } from '../HOC/LoginHOC';
+import { compose } from 'redux';
 
 class ProfileContainer extends React.Component{
 
     componentDidMount(){
-        
-        let userId = this.props.match.params.userId;
-        if(!userId){
-            userId = 2;
-        }
-        axios.get(`https://social-network.samuraijs.com/api/1.0/profile/${userId}`).then(response => {
-            // this.props.togglePreloader(false);        
-            this.props.setUserProfile(response.data);
-            });
+        this.props.openUserProfile(this.props.match.params.userId)
     }
 
     render(){
@@ -35,6 +30,13 @@ let mapStateToProps = (state) => {
     );
 }
 
+let ProfileContainerHOCUrl = compose(LoginHOC, 
+    withRouter, 
+    connect(mapStateToProps, {setUserProfile, openUserProfile}))
+    (ProfileContainer)
 
-let withUrlDatacontainerComponent = withRouter(ProfileContainer)
-export default connect(mapStateToProps, {setUserProfile})(withUrlDatacontainerComponent)
+// let ProfileWithLoginHOC = LoginHOC(ProfileContainer);
+// let withUrlDatacontainerComponent = withRouter(ProfileWithLoginHOC);
+// export default connect(mapStateToProps, {setUserProfile, openUserProfile})(withUrlDatacontainerComponent)
+
+export default ProfileContainerHOCUrl;

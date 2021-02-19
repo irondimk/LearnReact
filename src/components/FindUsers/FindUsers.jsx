@@ -1,7 +1,6 @@
-import axios from 'axios';
+
 import React from 'react';
 import UserContainer from './User/UserContainer';
-import User from './User/User';
 import classes from './User/User.module.css';
 
 let FindUsers = (props) => {

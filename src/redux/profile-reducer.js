@@ -1,3 +1,5 @@
+import { userAPI } from "../api/api";
+
 const ADD_POST = 'ADD-POST';
 const EDIT_TEXT_NEW_POST = 'EDIT-TEXT-NEW-POST';
 const SET_USER_PROFILE = 'SET-USER-PROFILE';
@@ -12,7 +14,6 @@ let initialState = {
   }
 
 const profileReducer = (state = initialState, action) => {
-    
     switch (action.type) {
         case ADD_POST: {
             let newState = {...state  };
@@ -57,6 +58,19 @@ export const editTextNewPostActionCreate = (text) => {
     return {
         type: EDIT_TEXT_NEW_POST,
         postText: text
+    }
+}
+
+export const openUserProfile = (idUser) => {
+    console.log(123);
+    return (dispatch) => {
+        
+        if(!idUser){
+            idUser = 2;
+        }
+        userAPI.userProfile(idUser).then(response => {      
+            dispatch(setUserProfile(response));
+            });
     }
 }
 

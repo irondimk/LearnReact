@@ -25,4 +25,16 @@ export const userAPI = {
             return response.data;
         })
     },
+    auth(){
+        return instance.get('auth/me')
+        .then(response => {
+            return response.data
+        })
+    },
+    userProfile(userId){
+        return instance.get(`profile/${userId}`)
+        .then(response => {
+            return response.data
+        })
+    }
 }

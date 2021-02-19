@@ -1,8 +1,8 @@
-import axios from 'axios';
 import React from 'react';
 import FindUsers from './FindUsers';
 import Preloader from './../Preloader/Preloader';
-import { getUsers, userAPI } from '../../api/api';
+import { connect } from 'react-redux';
+import { LoginHOC } from '../HOC/LoginHOC';
 
 class FindUsersAPIComponent extends React.Component {
     
@@ -12,42 +12,12 @@ class FindUsersAPIComponent extends React.Component {
 
    
     componentDidMount(){
-        this.props.togglePreloader(true);
-        
-        userAPI.getUsers(this.props.currentPage, this.props.pageSize).then(response => {
-            this.props.togglePreloader(false);        
-            this.props.setUsers(response.items);
-                this.props.setCount(response.totalCount);
-            });
-
-
-        // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pageSize}`,
-        // {
-        //     withCredentials: true
-        // }).then(response => {
-        //     this.props.togglePreloader(false);        
-        //     this.props.setUsers(response.data.items);
-        //         this.props.setCount(response.data.totalCount);
-        //     });
+        this.props.getUsersThunk(this.props.currentPage, this.props.pageSize);
     }
 
     pageChanged = (numberPage) =>{
-        this.props.togglePreloader(true);
         this.props.setCurrentPage(numberPage);
-        userAPI.getUsers(numberPage, this.props.pageSize).then(response => {
-            this.props.togglePreloader(false);   
-             this.props.setUsers(response.items);
-            this.props.setCount(response.totalCount);
-        });
-
-        // axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${numberPage}&count=${this.props.pageSize}`,
-        // {
-        //     withCredentials: true
-        // }).then(response => {
-        //     this.props.togglePreloader(false);   
-        //      this.props.setUsers(response.data.items);
-        //     this.props.setCount(response.data.totalCount);
-        // });
+        this.props.getUsersThunk(numberPage, this.props.pageSize);
     }
 
     render() {
@@ -69,6 +39,6 @@ class FindUsersAPIComponent extends React.Component {
     }
 }
 
+let FindUsersWithLoginCheck = LoginHOC(FindUsersAPIComponent)
 
-
-export default FindUsersAPIComponent;
+export default FindUsersWithLoginCheck;

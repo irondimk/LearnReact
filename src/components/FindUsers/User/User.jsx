@@ -21,7 +21,7 @@ let User = (props) => {
                 
                 {
                     /* props.followed ?  <a href="#" className={classes.unfollow} onClick={()=> {unfollow(props.id)}}>Unfollowed</a> : <a href="#" className={classes.follow} onClick={()=> {follow(props.id)}}>Followed</a> */
-                    props.followed  ?  
+                    props.followed  ?   
                     (props.isFollowingProcess ? <a href="#" className={classes.disabled}>Unfollowed</a> :
 <a href="#" className={classes.unfollow} onClick={()=> {unfollow(props.id)}}>Unfollowed</a>):
 (props.isFollowingProcess ? <a href="#" className={classes.disabled}>Followed</a> :
