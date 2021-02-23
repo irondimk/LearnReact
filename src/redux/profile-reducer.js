@@ -55,6 +55,8 @@ export const setUserProfile = (profile) => {
 }
 
 export const setUserStatus = (status) => {
+    // debugger;
+    console.log(123456);
     return{
         type: SET_USER_STATUS,
         status
@@ -77,7 +79,7 @@ export const editTextNewPostActionCreate = (text) => {
 export const openUserProfile = (idUser) => {
     return (dispatch) => {
         if(!idUser){
-            idUser = 2;
+            idUser = 14586;
         }
         profileAPI.userProfile(idUser).then(response => {      
             dispatch(setUserProfile(response));
@@ -93,9 +95,10 @@ export const openUserProfile = (idUser) => {
 export const updateStatus = (status) => {
     console.log(123);
     return(dispatch) => {
-        profileAPI.updateStatus(status).then(response => {   
-            if(response.data.resultCode === 0){
-                dispatch(setUserStatus(response));
+        profileAPI.updateStatus(status).then(response => { 
+            // debugger;
+            if(response.resultCode === 0){
+                dispatch(setUserStatus(status));
             }   
             });
     }
