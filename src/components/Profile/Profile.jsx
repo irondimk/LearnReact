@@ -8,7 +8,7 @@ import { Redirect } from 'react-router-dom';
 const Profile = (props) => {
     return (
         <div className={classes.content}>
-            <ProfileInfo profile={props.profile}/>
+            <ProfileInfo status={props.status} profile={props.profile} updateStatus={props.updateStatus}/>
             <MyPostsContainer />
         </div>
     );

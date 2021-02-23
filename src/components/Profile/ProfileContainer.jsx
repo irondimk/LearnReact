@@ -1,11 +1,8 @@
 import React from 'react';
 import Profile from './Profile';
-import axios from 'axios';
 import {connect} from "react-redux";
-import {setUserProfile, openUserProfile} from './../../redux/profile-reducer';
+import {setUserProfile, openUserProfile, updateStatus} from './../../redux/profile-reducer';
 import { withRouter } from 'react-router-dom';
-import { userAPI } from '../../api/api';
-import { LoginHOC } from '../HOC/LoginHOC';
 import { compose } from 'redux';
 
 class ProfileContainer extends React.Component{
@@ -17,7 +14,7 @@ class ProfileContainer extends React.Component{
     render(){
         return(
             
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile {...this.props} profile={this.props.profile} />
         );
     }
 }
@@ -25,18 +22,17 @@ class ProfileContainer extends React.Component{
 let mapStateToProps = (state) => {
     return(
         {
+            status: state.profilePage.status,
             profile: state.profilePage.profile
         }
     );
 }
 
-let ProfileContainerHOCUrl = compose(LoginHOC, 
+let ProfileContainerHOCUrl = compose(
+    // LoginHOC, 
     withRouter, 
-    connect(mapStateToProps, {setUserProfile, openUserProfile}))
+    connect(mapStateToProps, {openUserProfile, updateStatus}))
     (ProfileContainer)
 
-// let ProfileWithLoginHOC = LoginHOC(ProfileContainer);
-// let withUrlDatacontainerComponent = withRouter(ProfileWithLoginHOC);
-// export default connect(mapStateToProps, {setUserProfile, openUserProfile})(withUrlDatacontainerComponent)
 
 export default ProfileContainerHOCUrl;
