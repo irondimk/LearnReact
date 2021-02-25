@@ -52,5 +52,15 @@ export const userAPI = {
         .then(response => {
             return response.data
         })
+    },
+    enterSite(email, password, rememberMe){
+        return instance.post(`/auth/login`, {email, password, rememberMe}).then(response => {
+            return response.data;
+        })
+    },
+    exitSite(){
+        return instance.delete(`/auth/login`, {}).then(response => {
+            return response.data;
+        })
     }
 }

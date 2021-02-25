@@ -13,6 +13,7 @@ import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
 import Login from './components/Login/Login';
+import LoginContainer from './components/Login/LoginContainer';
 function App(props) {
   return (
         <BrowserRouter>
@@ -27,7 +28,7 @@ function App(props) {
           <Route path="/settings" render={() => <Settings/>} />
 
           <Route path="/find-users" render={() => <FindUsersContainer/>} />
-          <Route path="/login" render={() => <Login/>} />
+          <Route path="/login" render={() => <LoginContainer/>} />
           {/* <Redirect from="/dialogs" to="/login" /> */}
         </div>
       </div>

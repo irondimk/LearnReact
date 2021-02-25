@@ -9,7 +9,7 @@ function Header(props) {
             <div className={classes.wrapper}>
                 <img className={classes.image} src="http://aimtechmyanmar.com/assets/img/logo/wifi/wifiprojectmanagement.png"></img>
                 <div className={classes.loginBlock}>
-                {props.isAuth ? <p>Hello {props.login}</p> : <NavLink className={classes.loginText} to={'/login'}>Login</NavLink>}
+                {props.isAuth ? <div><div><p>Hello {props.login}</p></div> <div><a href="#" className={classes.logout} onClick={props.exitSite}>Logout</a></div> </div> : <NavLink className={classes.loginText} to={'/login'}>Login</NavLink>}
                     
                 </div>
             </div>
