@@ -32,13 +32,14 @@ const dialogsReducer = (state = initialState, action)=> {
           return newState;
         }
         case SEND_MESSAGE: {
+          debugger;
           let newState = {...state};
           newState.usersdialogs = [...state.usersdialogs];
           newState.MessagesData = [...state.MessagesData];
             let newMessage = {
               src: "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png",
               username: "Me",
-              message: newState.newMessageText
+              message: action.message
             }
             newState.MessagesData.push(newMessage);
             newState.newMessageText = '';
@@ -56,9 +57,16 @@ export const editTextNewMessageActionCreate = (text) => {
     }
   }
   
-  export const SendMessageActionCreate = () => {
+  // export const SendMessageActionCreate = () => {
+  //   return {
+  //     type: SEND_MESSAGE
+  //   }
+  // }
+
+  export const SendMessageActionCreate = (message) => {
     return {
-      type: SEND_MESSAGE
+      type: SEND_MESSAGE,
+      message
     }
   }
   

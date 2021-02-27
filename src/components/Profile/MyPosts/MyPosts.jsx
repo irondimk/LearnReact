@@ -26,7 +26,6 @@ const MyPosts = (props) => {
 
   let onSubmit = (values) => {
     props.addPost(values.postText)
-    // reset
   };
 
   return (
@@ -35,7 +34,7 @@ const MyPosts = (props) => {
 
       <Form
         onSubmit={onSubmit}
-        render={({ handleSubmit, submitting, pristine, reset }) => (
+        render={({ handleSubmit, submitting, pristine, reset, form }) => (
           <form
             onSubmit={handleSubmit}
             // onSubmit={event => {
@@ -46,6 +45,14 @@ const MyPosts = (props) => {
               <button type="submit" disabled={submitting || pristine}>
                 Submit
                 </button>
+                
+                <button
+              type="button"
+              onClick={form.reset}
+              disabled={submitting || pristine}
+            >
+              Reset
+            </button>
               </div>
           </form>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Messages.module.css';
+import { Form, Field } from 'react-final-form';
 import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
 
 let MessageDialog = (props) => {
@@ -39,12 +40,36 @@ const Messages = (props) => {
         props.sendMessage();
         // props.dispatch(SendMessageActionCreate())
     }
+    let onSubmit = (value) => {
+        props.sendMessage(value.textMessage);
+    };
+
     return (
         <div>
             <div className={classes.content}>
                 {DialogMessages}
-                <textarea ref={newMessageElement} onChange={editNewMessageText} className={classes.newMessageBox} value={props.newMessageText} name="" id="" cols="30" rows="10"></textarea>
-                <a onClick={sendMessage} className={classes.sendMessage} >Отправить</a>
+
+                <Form
+                    onSubmit={onSubmit}
+                    render={({ handleSubmit, submitting, pristine, reset, form }) => (
+                        <form
+                            onSubmit={handleSubmit}
+                        >
+                            <div><Field className={classes.newMessageBox} placeholder={"Your message"} name={"textMessage"} component={"textarea"} id={"textMessage"} />
+                            </div><div><button className={classes.sendMessage} type="submit" disabled={submitting || pristine}>
+                                    Send
+                </button>
+
+                                
+                            </div>
+                        </form>
+
+
+                    )}
+                />
+
+                {/* <textarea ref={newMessageElement} onChange={editNewMessageText} className={classes.newMessageBox} value={props.newMessageText} name="" id="" cols="30" rows="10"></textarea>
+                <a onClick={sendMessage} className={classes.sendMessage} >Отправить</a> */}
             </div>
         </div>
     );

@@ -12,29 +12,11 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        sendMessage : ()=> {dispatch(SendMessageActionCreate())},
+        sendMessage : (message)=> {dispatch(SendMessageActionCreate(message))},
         updateTextNewMessage : (text)=> {dispatch(editTextNewMessageActionCreate(text))}
     }
 }
 
 let MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
-
-// const MessagesContainer = (props) => {
-
-//     let dialogs = props.store.getState().dialogsPage;
-
-//     let editNewMessageText = (text) => {
-//         props.store.dispatch(editTextNewMessageActionCreate(text));
-//     }
-//     let sendMessage = () => {
-//         props.store.dispatch(SendMessageActionCreate())
-//     }
-//     return (
-//         <Messages sendMessage={sendMessage} updateTextNewMessage={editNewMessageText} MessagesData={dialogs.MessagesData}
-//         newMessageText = {dialogs.newMessageText}
-//         />
-//     );
-// }
-
 
 export default MessagesContainer;
