@@ -1,7 +1,8 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
-import {AddPostActionCreate, editTextNewPostActionCreate} from './../../../redux/profile-reducer';
+import { Form, Field } from 'react-final-form';
+import { render } from "react-dom";;
 
 const MyPosts = (props) => {
   let jsxPosts = props.profilePage.posts.map(
@@ -13,22 +14,49 @@ const MyPosts = (props) => {
   let newPostElement = React.createRef();
 
   let addPost = () => {
-    // props.dispatch(AddPostActionCreate());
     props.addPost();
   }
 
   let onPostChange = () => {
-    // props.dispatch(editTextNewPostActionCreate(newPostElement.current.value));
     props.updateNewPostText(newPostElement.current.value);
   }
+
+
+  let sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+  let onSubmit = (values) => {
+    props.addPost(values.postText)
+    // reset
+  };
 
   return (
     <div className={classes.posts}>
       My posts
-      <div>
+
+      <Form
+        onSubmit={onSubmit}
+        render={({ handleSubmit, submitting, pristine, reset }) => (
+          <form
+            onSubmit={handleSubmit}
+            // onSubmit={event => {
+            //   handleSubmit(event).then(reset);
+            // }}
+          >
+            <div><Field placeholder={"Your post"} name={"postText"} component={"textarea"} id={"postText"} />
+              <button type="submit" disabled={submitting || pristine}>
+                Submit
+                </button>
+              </div>
+          </form>
+
+
+        )}
+      />
+
+      {/* <div>
         <textarea onChange={onPostChange} value={props.profilePage.newPostText} ref={newPostElement} name="" id="" cols="30" rows="3"></textarea>
         <button onClick={addPost}>Add post</button>
-      </div>
+      </div> */}
       <div>
         {jsxPosts}
       </div>

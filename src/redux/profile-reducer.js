@@ -20,14 +20,24 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newState = {...state  };
             newState.posts = [...state.posts];
-            let newPost = {
-                likes: 0,
-                message: newState.newPostText,
-                avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
-            }
-            newState.posts.push(newPost);
-            newState.newPostText = '';
-            return newState;
+            // debugger;
+                let newPost = {
+                    likes: 0,
+                    message: action.post,
+                    avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
+                }
+                newState.posts.push(newPost);
+                newState.newPostText = '';
+                return newState;
+
+            // let newPost = {
+            //     likes: 0,
+            //     message: newState.newPostText,
+            //     avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
+            // }
+            // newState.posts.push(newPost);
+            // newState.newPostText = '';
+            // return newState;
         }
         case EDIT_TEXT_NEW_POST: {
             let newState = {...state  };
@@ -64,6 +74,13 @@ export const setUserStatus = (status) => {
 export const AddPostActionCreate = () => {
     return {
         type: ADD_POST
+    }
+}
+
+export const AddPostActionCreateForm = (post) => {
+    return {
+        type: ADD_POST,
+        post
     }
 }
 
