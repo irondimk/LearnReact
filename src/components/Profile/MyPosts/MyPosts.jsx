@@ -2,7 +2,8 @@ import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post.jsx';
 import { Form, Field } from 'react-final-form';
-import { render } from "react-dom";;
+import { render } from "react-dom";
+import FormStateToRedux from './../../../redux/FormStateToRedux';
 
 const MyPosts = (props) => {
   let jsxPosts = props.profilePage.posts.map(
@@ -41,6 +42,7 @@ const MyPosts = (props) => {
             //   handleSubmit(event).then(reset);
             // }}
           >
+          <FormStateToRedux form="newPostInput" />
             <div><Field placeholder={"Your post"} name={"postText"} component={"textarea"} id={"postText"} />
               <button type="submit" disabled={submitting || pristine}>
                 Submit

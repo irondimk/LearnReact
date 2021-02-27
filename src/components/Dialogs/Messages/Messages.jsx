@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './Messages.module.css';
 import { Form, Field } from 'react-final-form';
 import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
+import FormStateToRedux from './../../../redux/FormStateToRedux';
 
 let MessageDialog = (props) => {
     return (
@@ -53,8 +54,9 @@ const Messages = (props) => {
                     onSubmit={onSubmit}
                     render={({ handleSubmit, submitting, pristine, reset, form }) => (
                         <form
-                            onSubmit={handleSubmit}
+                            onSubmit={handleSubmit}   
                         >
+                        <FormStateToRedux form="message" />
                             <div><Field className={classes.newMessageBox} placeholder={"Your message"} name={"textMessage"} component={"textarea"} id={"textMessage"} />
                             </div><div><button className={classes.sendMessage} type="submit" disabled={submitting || pristine}>
                                     Send
