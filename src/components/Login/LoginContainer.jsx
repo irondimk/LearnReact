@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import { userAPI } from '../../api/api';
 import Login from './Login';
 import {enterSite} from './../../redux/auth-reducer';
+import { LoginHOC } from '../HOC/LoginHOC';
 
 
 // const mapDispatchToProps = (dispatch) => {
@@ -18,4 +19,6 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {enterSite})(Login);
+let LoginWithHOC = LoginHOC(Login);
+
+export default connect(mapStateToProps, {enterSite})(LoginWithHOC);

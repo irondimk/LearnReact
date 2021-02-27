@@ -10,7 +10,6 @@ class Login extends React.Component{
     sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     onSubmit = (values) => {
-        debugger;
         this.props.enterSite(values.login, values.password, values.rememberme)
         // console.log(values);
     

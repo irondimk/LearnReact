@@ -3,18 +3,38 @@ import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
 
 
-function Header(props) {
+class Header extends React.Component{
+
+    state = {
+        isAuth: this.props.isAuth,
+        login: this.props.login
+    }
+
+    componentDidMount(){
+        this.state.isAuth = this.props.status;
+        this.state.login = this.props.login
+    }
+
+    componentDidUpdate(prevProps, prevState){
+        if(prevProps.isAuth !== this.props.isAuth){
+            this.setState({isAuth : this.props.isAuth,
+                login: this.props.login})
+        }
+    }
+
+    render(){
     return (
         <header>
             <div className={classes.wrapper}>
                 <img className={classes.image} src="http://aimtechmyanmar.com/assets/img/logo/wifi/wifiprojectmanagement.png"></img>
                 <div className={classes.loginBlock}>
-                {props.isAuth ? <div><div><p>Hello {props.login}</p></div> <div><a href="#" className={classes.logout} onClick={props.exitSite}>Logout</a></div> </div> : <NavLink className={classes.loginText} to={'/login'}>Login</NavLink>}
+                {this.state.isAuth ? <div><div><p>Hello {this.state.login}</p></div> <div><a href="#" className={classes.logout} onClick={this.props.exitSite}>Logout</a></div> </div> : <NavLink className={classes.loginText} to={'/login'}>Login</NavLink>}
                     
                 </div>
             </div>
         </header>
     );
+}
 }
 
 export default Header;
