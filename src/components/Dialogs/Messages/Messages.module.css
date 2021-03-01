@@ -36,6 +36,17 @@
     width: 100%;
     height: 90px;
     margin-bottom: 10px;
+    resize: none;
+}
+
+.newMessageBoxError{
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+    resize: none;
 }
 
 .sendMessage{
@@ -49,4 +60,10 @@
 .sendMessage:hover{
     background: green;
     color: #FFFFFF;
+}
+
+
+.spanError{
+    color: red;
+    font-weight: 600;
 }

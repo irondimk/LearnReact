@@ -3,6 +3,7 @@ import classes from './Messages.module.css';
 import { Form, Field } from 'react-final-form';
 import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
 import FormStateToRedux from './../../../redux/FormStateToRedux';
+import { maxCount, required, composeValidators } from '../../../utils/validators';
 
 let MessageDialog = (props) => {
     return (
@@ -57,7 +58,16 @@ const Messages = (props) => {
                             onSubmit={handleSubmit}   
                         >
                         <FormStateToRedux form="message" />
-                            <div><Field className={classes.newMessageBox} placeholder={"Your message"} name={"textMessage"} component={"textarea"} id={"textMessage"} />
+                            <div>
+                            <Field validate={composeValidators(required, maxCount(50))}  name={"textMessage"} id={"textMessage"} >
+                            {({ input, meta }) => (
+                                <div>
+                                    <textarea {...input} className={(meta.error && meta.touched) ? classes.newMessageBoxError : classes.newMessageBox} type="text" placeholder={"Your message"} />
+                                    {meta.error && meta.touched && <span className={classes.spanError}>{meta.error}</span>}
+                                </div>
+                                )}
+                            
+                            </Field>
                             </div><div><button className={classes.sendMessage} type="submit" disabled={submitting || pristine}>
                                     Send
                 </button>
