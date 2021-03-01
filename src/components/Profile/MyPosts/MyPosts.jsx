@@ -4,6 +4,7 @@ import Post from './Post/Post.jsx';
 import { Form, Field } from 'react-final-form';
 import { render } from "react-dom";
 import FormStateToRedux from './../../../redux/FormStateToRedux';
+import { composeValidators, maxCount, required } from '../../../utils/validators';
 
 const MyPosts = (props) => {
   let jsxPosts = props.profilePage.posts.map(
@@ -31,7 +32,8 @@ const MyPosts = (props) => {
 
   return (
     <div className={classes.posts}>
-      My posts
+    <h3 className={classes.title}> My posts </h3>
+      
 
       <Form
         onSubmit={onSubmit}
@@ -43,8 +45,17 @@ const MyPosts = (props) => {
             // }}
           >
           <FormStateToRedux form="newPostInput" />
-            <div><Field placeholder={"Your post"} name={"postText"} component={"textarea"} id={"postText"} />
-              <button type="submit" disabled={submitting || pristine}>
+            <div>
+            <Field validate={composeValidators(required, maxCount(50))} name={"postText"} id={"postText"} >
+            {({ input, meta }) => (
+              <div className={classes.inputDiv}>
+                <textarea {...input} className = {classes.myPostInput} type="text" placeholder={"Your post"} />
+                {meta.error && meta.touched && <span className = {classes.errorSpan}>{meta.error}</span>}
+              </div>
+            )}
+            </Field>
+              
+              <button className={classes.submit} type="submit" disabled={submitting || pristine}>
                 Submit
                 </button>
                 

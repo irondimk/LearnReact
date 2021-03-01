@@ -10,4 +10,34 @@
 
   .posts{
     background: red;
+    padding: 20px;
+  }
+
+  .title{
+    font-size: 22px;
+    margin-bottom: 10px;
+  }
+
+  .submit{
+    padding: 10px;
+  }
+
+  .myPostInput{
+    resize: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 80%;
+  }
+
+  .errorSpan{
+    position: absolute;
+    left: auto;
+    right: 0;
+    font-size: 18px;
+    font-weight: 600;
+    color: blue;
+  }
+
+  .inputDiv{
+    position: relative;
   }
