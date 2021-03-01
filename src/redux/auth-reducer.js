@@ -36,7 +36,7 @@ export const setAuthUserData = (userId, email, login) => {
 
 export const deleteAuthUserData = (userId, email, login) => {
     return{
-        type: SET_USER_DATA,
+        type: DELETE_USER_DATA,
         data: {userId, email, login}
     }
 }
@@ -59,9 +59,14 @@ export const enterSite = (email, password, rememberMe) => {
         userAPI.enterSite(email, password, rememberMe)
         .then(response => {
            if(response.resultCode == 0){
-               dispatch(setAuthUserData(response.data.id,
-                response.data.email,
-                response.data.login));
+               userAPI.auth()
+                .then(response => {       
+                if(response.resultCode == 0){
+                    dispatch(setAuthUserData(response.data.id,
+                        response.data.email,
+                        response.data.login));
+                }
+                });
            }
         });
     }

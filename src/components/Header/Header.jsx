@@ -11,12 +11,13 @@ class Header extends React.Component{
     }
 
     componentDidMount(){
-        this.state.isAuth = this.props.status;
+        this.state.isAuth = this.props.isAuth;
         this.state.login = this.props.login
     }
 
     componentDidUpdate(prevProps, prevState){
-        if(prevProps.isAuth !== this.props.isAuth){
+        
+        if((prevProps.isAuth !== this.props.isAuth) || (prevProps.login !== this.props.login)){
             this.setState({isAuth : this.props.isAuth,
                 login: this.props.login})
         }
