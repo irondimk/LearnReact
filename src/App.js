@@ -29,7 +29,6 @@ function App(props) {
 
           <Route path="/find-users" render={() => <FindUsersContainer/>} />
           <Route path="/login" render={() => <LoginContainer/>} />
-          {/* <Redirect from="/dialogs" to="/login" /> */}
         </div>
       </div>
     </BrowserRouter>

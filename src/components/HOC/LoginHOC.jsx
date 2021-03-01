@@ -2,7 +2,7 @@ import { Redirect } from 'react-router-dom';
 import React from 'react';
 import {connect} from "react-redux";
 import Login from '../Login/Login';
-import ProfileContainer from '../Profile/ProfileContainer';
+// import ProfileContainer from '../Profile/ProfileContainer';
 
 let mapStateToPropsForRedirect = (state) => {
     return(
@@ -21,8 +21,9 @@ export const LoginHOC = (WrappedComponent) => {
                     return <Login {...this.props} />;
                 }
     
-                return <ProfileContainer {...this.props}/>
+                return <Redirect to="/profile"/>
             }
+
             if(!this.props.isAuth){
                 return <Redirect to="/login"/>
             }

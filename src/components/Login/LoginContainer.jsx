@@ -15,7 +15,7 @@ import { LoginHOC } from '../HOC/LoginHOC';
 
 const mapStateToProps = (state) => {
     return {
-
+        
     }
 }
 

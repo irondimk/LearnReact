@@ -1,9 +1,13 @@
 import React from 'react';
+import {LoginHOC} from './../HOC/LoginHOC';
+import { withRouter } from 'react-router-dom';
 import Profile from './Profile';
 import {connect} from "react-redux";
 import {setUserProfile, openUserProfile, updateStatus} from './../../redux/profile-reducer';
-import { withRouter } from 'react-router-dom';
+
+
 import { compose } from 'redux';
+
 
 class ProfileContainer extends React.Component{
 
@@ -19,6 +23,8 @@ class ProfileContainer extends React.Component{
     }
 }
 
+
+
 let mapStateToProps = (state) => {
     return(
         {
@@ -28,11 +34,13 @@ let mapStateToProps = (state) => {
     );
 }
 
+
+
 let ProfileContainerHOCUrl = compose(
-    // LoginHOC, 
+    LoginHOC, 
     withRouter, 
-    connect(mapStateToProps, {openUserProfile, updateStatus}))
-    (ProfileContainer)
+    connect(mapStateToProps, {setUserProfile, openUserProfile, updateStatus}))
+    (ProfileContainer);
 
 
 export default ProfileContainerHOCUrl;

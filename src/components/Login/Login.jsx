@@ -1,6 +1,7 @@
 import { render } from '@testing-library/react';
 import React from 'react';
 import { Form, Field } from 'react-final-form';
+import { Redirect } from 'react-router-dom';
 import { userAPI } from '../../api/api';
 import { composeValidators, maxCount, required } from '../../utils/validators';
 import classes from './Login.module.css';
@@ -11,7 +12,7 @@ class Login extends React.Component {
     sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     onSubmit = (values) => {
-        this.props.enterSite(values.login, values.password, values.rememberme)
+        this.props.enterSite(values.login, values.password, values.rememberme);
     };
 
     render() {
