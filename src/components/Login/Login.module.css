@@ -1,0 +1,37 @@
+
+.title{
+    font-size: 18px;
+    margin-bottom: 16px;
+    font-weight: 600;
+}
+
+.form{
+    width: 340px;
+}
+.inputDiv{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    position: relative;
+}
+.input{
+    border: 1px solid rgb(194, 194, 194);
+    padding: 4px;
+    margin-left: 8px;
+    width: 260px;
+}
+
+.inputLabel{
+    margin-top: 6px;
+}
+
+.submit{
+    padding: 4px 16px;
+}
+
+.errorSpan{
+    position: absolute;
+    left: auto;
+    right: -80px;
+    margin-top: 6px;
+}
