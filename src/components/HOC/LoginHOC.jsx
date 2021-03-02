@@ -12,7 +12,7 @@ let mapStateToPropsForRedirect = (state) => {
         {
             isAuth: state.auth.isAuth,
             userId: state.auth.userId,
-            isLoad: state.auth.isLoad
+            isLoad: state.auth.isLoadComplete
         }
     );
 }

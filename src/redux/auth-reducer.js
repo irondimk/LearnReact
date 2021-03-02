@@ -10,7 +10,7 @@ let initialState = {
     login: null,
     isAuth: false,
     lastTryIsFalse: false,
-    isLoad: false
+    isLoadComplete: false
   }
 
 const authReducer = (state = initialState, action) => {
@@ -18,7 +18,7 @@ const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_DATA:{
             return{
-                ...state, ...action.data, isAuth: true, lastTryIsFalse: false, isLoad: true 
+                ...state, ...action.data, isAuth: true, lastTryIsFalse: false, isLoadComplete: true 
             }
         }
         case DELETE_USER_DATA: {

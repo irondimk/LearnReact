@@ -17,7 +17,7 @@ const mapStateToProps = (state) => {
     return {
         isAuth: state.auth.isAuth,
         lastTryIsFalse: state.auth.lastTryIsFalse, 
-        isLoad: state.auth.isLoad
+        isLoad: state.auth.isLoadComplete
     }
 }
 

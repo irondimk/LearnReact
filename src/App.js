@@ -1,21 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import './components/null.css';
-import Header from './components/Header/Header.jsx';
 import Navbar from './components/Navbar/Navbar';
 import Dialogs from './components/Dialogs/DialogsContainer';
-import { BrowserRouter, Redirect, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 import News from './components/News/News';
 import Music from './components/Music/Music';
 import Settings from './components/Settings/Settings';
 import FindUsersContainer from './components/FindUsers/FindUsersContainer';
 import ProfileContainer from './components/Profile/ProfileContainer';
 import HeaderContainer from './components/Header/HeaderContainer';
-import Login from './components/Login/Login';
 import LoginContainer from './components/Login/LoginContainer';
-function App(props) {
-  return (
+import {auth} from './redux/auth-reducer';
+import { connect } from 'react-redux';
+import { compose } from 'redux';
+
+class App extends React.Component {
+
+  componentDidMount(){
+    this.props.auth();
+  }
+
+  render(){
+return (
         <BrowserRouter>
         <div className="main">
         <HeaderContainer/>
@@ -34,7 +41,10 @@ function App(props) {
     </BrowserRouter>
   );
 }
+}
 
 
 
-export default App;
+export default compose(
+  // withRouter, 
+  connect(null, {auth}))(App);
