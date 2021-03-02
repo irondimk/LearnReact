@@ -12,6 +12,7 @@ import { compose } from 'redux';
 class ProfileContainer extends React.Component{
 
     componentDidMount(){
+       
         this.props.openUserProfile(this.props.match.params.userId)
     }
 
