@@ -14,7 +14,11 @@ class ProfileContainer extends React.Component{
     componentDidMount(){
         
         if(!this.props.match.params.userId){
+            debugger;
             this.props.openUserProfile(this.props.userId)
+        }
+        else{
+            this.props.openUserProfile(this.props.match.params.userId)
         }
         // this.props.openUserProfile(this.props.match.params.userId)
     }
