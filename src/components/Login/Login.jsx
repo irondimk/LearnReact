@@ -51,7 +51,10 @@ class Login extends React.Component {
                                     <label for={"rememberMeCheckbox"}>Remember me</label>
                                 </span>
                             </div>
-                            <div><button className={classes.submit} type="submit" disabled={submitting || pristine}>
+                            {this.props.lastTryIsFalse ? <div className={classes.errorDiv}><span className={classes.errorAutorization}>Uncorrect login or password</span></div> :
+                            <div> </div>}
+                            
+                            <div ><button className={classes.submit} type="submit" disabled={submitting || pristine}>
                                 Submit
                 </button></div>
                         </form>

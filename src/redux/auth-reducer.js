@@ -2,12 +2,14 @@ import { userAPI } from "../api/api";
 
 const SET_USER_DATA = 'SET_USER_DATA';
 const DELETE_USER_DATA = 'DELETE_USER_DATA';
+const LOSE_TRY_ENTER = 'LOSE_TRY_ENTER';
 
 let initialState = {
     userId: null, 
     email: null,
     login: null,
-    isAuth: false
+    isAuth: false,
+    lastTryIsFalse: false
   }
 
 const authReducer = (state = initialState, action) => {
@@ -15,12 +17,17 @@ const authReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_USER_DATA:{
             return{
-                ...state, ...action.data, isAuth: true
+                ...state, ...action.data, isAuth: true, lastTryIsFalse: false
             }
         }
         case DELETE_USER_DATA: {
             return{
-                ...state, ...action.data, isAuth: false
+                ...state, ...action.data, isAuth: false, lastTryIsFalse: false
+            }
+        }
+        case LOSE_TRY_ENTER: {
+            return{
+                ...state, lastTryIsFalse: true
             }
         }
         default: return state;
@@ -38,6 +45,12 @@ export const deleteAuthUserData = (userId, email, login) => {
     return{
         type: DELETE_USER_DATA,
         data: {userId, email, login}
+    }
+}
+
+export const falseTryIsEnterAC = () => {
+    return{
+        type: LOSE_TRY_ENTER,
     }
 }
 
@@ -67,6 +80,9 @@ export const enterSite = (email, password, rememberMe) => {
                         response.data.login));
                 }
                 });
+           }
+           else{
+               dispatch(falseTryIsEnterAC());
            }
         });
     }

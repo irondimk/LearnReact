@@ -35,3 +35,10 @@
     right: -80px;
     margin-top: 6px;
 }
+.errorDiv{
+    margin-bottom: 8px;
+}
+.errorAutorization{
+    color: red;
+    font-weight: 600;
+}

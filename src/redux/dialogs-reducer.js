@@ -32,7 +32,6 @@ const dialogsReducer = (state = initialState, action)=> {
           return newState;
         }
         case SEND_MESSAGE: {
-          debugger;
           let newState = {...state};
           newState.usersdialogs = [...state.usersdialogs];
           newState.MessagesData = [...state.MessagesData];

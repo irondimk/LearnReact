@@ -22,7 +22,6 @@ export const LoginHOC = (WrappedComponent) => {
                     return <Login {...this.props} />;
                 }
                 let path = "/profile/" + this.props.userId; 
-                debugger;
                 return <Redirect to={path}/ >
             }
 
