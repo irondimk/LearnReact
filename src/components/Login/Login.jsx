@@ -9,7 +9,7 @@ import classes from './Login.module.css';
 
 
 class Login extends React.Component {
-
+    debugger;
     sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     onSubmit = (values) => {
@@ -17,11 +17,14 @@ class Login extends React.Component {
     };
 
     render() {
-        return (
-            
+        
+        if(this.props.isAuth){
+            return <Redirect to={"/profile"}/>
+        }
 
+        return (
             <div>
-            {this.props.isLoad ? <div>
+            <div>
                 <h2 className={classes.title}>Sign in</h2>
                 <Form
                
@@ -65,7 +68,7 @@ class Login extends React.Component {
 
                     )}
                 />
-                </div> : <Preloader/>}
+                </div>
             
             </div>
         )

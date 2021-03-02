@@ -15,11 +15,12 @@ import { LoginHOC } from '../HOC/LoginHOC';
 
 const mapStateToProps = (state) => {
     return {
+        isAuth: state.auth.isAuth,
         lastTryIsFalse: state.auth.lastTryIsFalse, 
         isLoad: state.auth.isLoad
     }
 }
 
-let LoginWithHOC = LoginHOC(Login);
+// let LoginWithHOC = LoginHOC(Login);
 
-export default connect(mapStateToProps, {enterSite})(LoginWithHOC);
+export default connect(mapStateToProps, {enterSite})(Login);
