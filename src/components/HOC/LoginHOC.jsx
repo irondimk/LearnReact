@@ -21,18 +21,6 @@ export const LoginHOC = (WrappedComponent) => {
 
      class RedirectComponent extends React.Component{
         render(){
-            /*
-            if(WrappedComponent == Login){
-                if(!this.props.isAuth){ 
-                    return <WrappedComponent {...this.props} />
-                    // return <Login {...this.props} />;
-                }
-                else{
-                    let path = "/profile/" + this.props.userId; 
-                    return <Redirect to={path}/ >
-                }
-                
-            }*/
             if(!this.props.isLoad){
                 return <Preloader/>
             }
