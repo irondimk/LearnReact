@@ -15,7 +15,8 @@ import { LoginHOC } from '../HOC/LoginHOC';
 
 const mapStateToProps = (state) => {
     return {
-        lastTryIsFalse: state.auth.lastTryIsFalse
+        lastTryIsFalse: state.auth.lastTryIsFalse, 
+        isLoad: state.auth.isLoad
     }
 }
 

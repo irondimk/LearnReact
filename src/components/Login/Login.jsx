@@ -4,6 +4,7 @@ import { Form, Field } from 'react-final-form';
 import { Redirect } from 'react-router-dom';
 import { userAPI } from '../../api/api';
 import { composeValidators, maxCount, required } from '../../utils/validators';
+import Preloader from '../Preloader/Preloader';
 import classes from './Login.module.css';
 
 
@@ -17,9 +18,11 @@ class Login extends React.Component {
 
     render() {
         return (
-            <div>
-                <h2 className={classes.title}>Sign in</h2>
+            
 
+            <div>
+            {this.props.isLoad ? <div>
+                <h2 className={classes.title}>Sign in</h2>
                 <Form
                
                     onSubmit={this.onSubmit}
@@ -62,6 +65,8 @@ class Login extends React.Component {
 
                     )}
                 />
+                </div> : <Preloader/>}
+            
             </div>
         )
     }

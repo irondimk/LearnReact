@@ -92,7 +92,9 @@ export const editTextNewPostActionCreate = (text) => {
 
 export const openUserProfile = (idUser) => {
     return (dispatch) => {
+        // debugger;
         if(!idUser){
+            
             idUser = 14586;
         }
         profileAPI.userProfile(idUser).then(response => {      

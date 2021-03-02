@@ -9,15 +9,17 @@ let initialState = {
     email: null,
     login: null,
     isAuth: false,
-    lastTryIsFalse: false
+    lastTryIsFalse: false,
+    isLoad: false
   }
 
 const authReducer = (state = initialState, action) => {
     
     switch (action.type) {
         case SET_USER_DATA:{
+            debugger;
             return{
-                ...state, ...action.data, isAuth: true, lastTryIsFalse: false
+                ...state, ...action.data, isAuth: true, lastTryIsFalse: false, isLoad: true 
             }
         }
         case DELETE_USER_DATA: {

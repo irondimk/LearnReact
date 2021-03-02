@@ -2,6 +2,7 @@ import { Redirect } from 'react-router-dom';
 import React from 'react';
 import {connect} from "react-redux";
 import Login from '../Login/Login';
+// import LoginContainer from '../Login/LoginContainer';
 // import ProfileContainer from '../Profile/ProfileContainer';
 
 let mapStateToPropsForRedirect = (state) => {
@@ -19,10 +20,15 @@ export const LoginHOC = (WrappedComponent) => {
         render(){
             if(WrappedComponent == Login){
                 if(!this.props.isAuth){
-                    return <Login {...this.props} />;
+                    // debugger;    
+                    return <WrappedComponent {...this.props} />
+                    // return <Login {...this.props} />;
                 }
-                let path = "/profile/" + this.props.userId; 
-                return <Redirect to={path}/ >
+                else{
+                    let path = "/profile/" + this.props.userId; 
+                    return <Redirect to={path}/ >
+                }
+                
             }
 
             if(!this.props.isAuth){
