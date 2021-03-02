@@ -8,6 +8,7 @@ let mapStateToPropsForRedirect = (state) => {
     return(
         {
             isAuth: state.auth.isAuth,
+            userId: state.auth.userId
         }
     );
 }
@@ -20,8 +21,9 @@ export const LoginHOC = (WrappedComponent) => {
                 if(!this.props.isAuth){
                     return <Login {...this.props} />;
                 }
-    
-                return <Redirect to="/profile"/>
+                let path = "/profile/" + this.props.userId; 
+                debugger;
+                return <Redirect to={path}/ >
             }
 
             if(!this.props.isAuth){
