@@ -104,7 +104,6 @@ export const openUserProfile = (idUser) => {
 }
 
 export const updateStatus = (status) => {
-    console.log(123);
     return(dispatch) => {
         profileAPI.updateStatus(status).then(response => { 
             if(response.resultCode === 0){

@@ -2,14 +2,11 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import { Form, Field } from 'react-final-form';
 import { Redirect } from 'react-router-dom';
-import { userAPI } from '../../api/api';
 import { composeValidators, maxCount, required } from '../../utils/validators';
-import Preloader from '../Preloader/Preloader';
 import classes from './Login.module.css';
 
 
 class Login extends React.Component {
-    // debugger;
     sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     onSubmit = (values) => {
@@ -17,11 +14,7 @@ class Login extends React.Component {
     };
 
     render() {
-        // if(!this.props.isLoad){
-        //     return <Preloader/>
-        // }
         if(this.props.isAuth){
-            // debugger;
             return <Redirect to={"/profile"}/>
         }
 

@@ -1,10 +1,6 @@
 import Dialogs from "./Dialogs"
-import React from 'react';
 import {connect} from "react-redux";
 import  {LoginHOC}  from "../HOC/LoginHOC";
-
-
-
 
 const mapStateToProps = (state) => {
     return {

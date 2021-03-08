@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { followAC, unfollowAC, setUsersAC, setCountUsersAC, setCurrentPageAC, togglePreloaderAC, getUsersThunk } from "../../redux/users-reducer";
+import { followAC, unfollowAC, setCurrentPageAC, getUsersThunk } from "../../redux/users-reducer";
 import FindUsersAPIComponent from './FindUsersAPIComponent';
 
 let mapStateToProps = (state) => {

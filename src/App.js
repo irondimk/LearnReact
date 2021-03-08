@@ -45,6 +45,4 @@ return (
 
 
 
-export default compose(
-  // withRouter, 
-  connect(null, {auth}))(App);
+export default compose(connect(null, {auth}))(App);

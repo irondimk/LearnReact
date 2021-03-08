@@ -34,14 +34,6 @@ const Messages = (props) => {
     })
     let newMessageElement = React.createRef();
 
-    let editNewMessageText = () => {
-        props.updateTextNewMessage(newMessageElement.current.value);
-        // props.dispatch(editTextNewMessageActionCreate(newMessageElement.current.value));
-    }
-    let sendMessage = () => {
-        props.sendMessage();
-        // props.dispatch(SendMessageActionCreate())
-    }
     let onSubmit = (value) => {
         props.sendMessage(value.textMessage);
     };
