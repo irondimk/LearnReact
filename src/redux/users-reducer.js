@@ -135,6 +135,7 @@ export const getUsersThunk = (currentPage, pageSize) => {
 }
 
 export const follow = (id) => {
+    debugger;
     return (dispatch) => {
         dispatch(toggleIsFollowingProcessAC(true));
         userAPI.follow(id).then(response => {
@@ -147,6 +148,7 @@ export const follow = (id) => {
 }
 
 export const unfollow = (id) => {
+    debugger;
     return (dispatch) => {
         dispatch(toggleIsFollowingProcessAC(true));
         userAPI.unfollow(id).then(response => {

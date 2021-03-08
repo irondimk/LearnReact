@@ -16,19 +16,15 @@ let User = (props) => {
                 {props.photos.small ? <img src={props.photos.small} alt="" className={classes.avatar}/>
                 :  <img src={props.avatarSrc} alt="" className={classes.avatar}/>
                 }
-                    {/* <img src={props.avatarSrc} alt="" className={classes.avatar}/> */}
                 </NavLink>
                 
                 {
-                    /* props.followed ?  <a href="#" className={classes.unfollow} onClick={()=> {unfollow(props.id)}}>Unfollowed</a> : <a href="#" className={classes.follow} onClick={()=> {follow(props.id)}}>Followed</a> */
                     props.followed  ?   
                     (props.isFollowingProcess ? <a href="#" className={classes.disabled}>Unfollowed</a> :
 <a href="#" className={classes.unfollow} onClick={()=> {unfollow(props.id)}}>Unfollowed</a>):
 (props.isFollowingProcess ? <a href="#" className={classes.disabled}>Followed</a> :
 <a href="#" className={classes.follow} onClick={()=> {follow(props.id)}}>Followed</a>)
-                    
-
-                    
+     
                 }
             </div>
             <div className={classes.aboutUser}>
@@ -38,11 +34,9 @@ let User = (props) => {
                     </div>
                    
                     <div>
-                    {/* {props.country} */}
                     </div>
                 </div>
                 <div className={classes.city}>
-                {/* {props.city} */}
                 </div>
                 <div className={classes.status}>
                 {props.status}

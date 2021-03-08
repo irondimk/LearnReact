@@ -33,7 +33,6 @@ return (
           <Route path="/news" render={() => <News/>} />
           <Route path="/music" render={() => <Music/>} /> 
           <Route path="/settings" render={() => <Settings/>} />
-
           <Route path="/find-users" render={() => <FindUsersContainer/>} />
           <Route path="/login" render={() => <LoginContainer/>} />
         </div>

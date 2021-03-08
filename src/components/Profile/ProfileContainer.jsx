@@ -4,15 +4,12 @@ import { withRouter } from 'react-router-dom';
 import Profile from './Profile';
 import {connect} from "react-redux";
 import {setUserProfile, openUserProfile, updateStatus} from './../../redux/profile-reducer';
-
-
 import { compose } from 'redux';
 
 
 class ProfileContainer extends React.Component{
 
     componentDidMount(){
-        
         if(!this.props.match.params.userId){
             this.props.openUserProfile(this.props.userId)
         }
@@ -28,20 +25,15 @@ class ProfileContainer extends React.Component{
     }
 }
 
-
-
 let mapStateToProps = (state) => {
     return(
         {
             status: state.profilePage.status,
             profile: state.profilePage.profile,
-            // isLoad: state.auth.isLoadComplete,
             userId: state.auth.userId
         }
     );
 }
-
-
 
 let ProfileContainerHOCUrl = compose(
     LoginHOC, 

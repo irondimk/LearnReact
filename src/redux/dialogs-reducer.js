@@ -55,12 +55,6 @@ export const editTextNewMessageActionCreate = (text) => {
       messageText: text
     }
   }
-  
-  // export const SendMessageActionCreate = () => {
-  //   return {
-  //     type: SEND_MESSAGE
-  //   }
-  // }
 
   export const SendMessageActionCreate = (message) => {
     return {

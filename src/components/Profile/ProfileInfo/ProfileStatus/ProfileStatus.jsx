@@ -6,7 +6,6 @@ let inputStatus = React.createRef();
 
 class ProfileStatus extends React.Component {
     
-
     state = {
         editMode: false,
         status: this.props.status
@@ -37,7 +36,6 @@ class ProfileStatus extends React.Component {
    
     changeStatusInput(e){
         this.setState({
-            // status: inputStatus.current.value
             status: e.currentTarget.value
         })
     }
@@ -54,13 +52,10 @@ class ProfileStatus extends React.Component {
                     <p onClick={this.activateEditMode.bind(this)}>{this.props.status}</p>
                 </div>
             }
-                
-                
             </div>
             
         )
-    }
-    
+    }  
 }
 
 export default ProfileStatus;

@@ -12,9 +12,6 @@ const MyPosts = (props) => {
     }
   )
 
-  let newPostElement = React.createRef();
-
-
   let onSubmit = (values) => {
     props.addPost(values.postText)
   };
