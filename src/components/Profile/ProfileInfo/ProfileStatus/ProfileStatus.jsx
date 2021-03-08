@@ -2,7 +2,7 @@ import React from 'react';
 import classes from '../ProfileInfo.module.css';
 
 
-let inputStatus = React.createRef();
+// let inputStatus = React.createRef();
 
 class ProfileStatus extends React.Component {
     
@@ -45,7 +45,7 @@ class ProfileStatus extends React.Component {
             <div>
             {this.state.editMode ?
                 <div>
-                    <input onChange={this.changeStatusInput.bind(this)} ref={inputStatus} autoFocus={true} onBlur={this.deactivateEditMode.bind(this)} className={classes.status_input} value={this.state.status} type={Text} />
+                    <input onChange={this.changeStatusInput.bind(this)}  autoFocus={true} onBlur={this.deactivateEditMode.bind(this)} className={classes.status_input} value={this.state.status} type={Text} />
                 </div>
                 :
                 <div>
