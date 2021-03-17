@@ -21,7 +21,9 @@ const profileReducer = (state = initialState, action) => {
         case ADD_POST: {
             let newState = {...state  };
             newState.posts = [...state.posts];
+            let newIdPost = maxIdPost(state.posts) + 1;
                 let newPost = {
+                    id: newIdPost,
                     likes: 0,
                     message: action.post,
                     avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
@@ -51,6 +53,16 @@ const profileReducer = (state = initialState, action) => {
     
 }
 
+
+export const maxIdPost = (posts) => {
+    let max = posts[0].id;
+    for(let elem in posts){ 
+        if(posts[elem].id > max){
+            max = posts[elem].id;
+        }
+    }
+    return max;
+}
 
 export const deletePost = (postId) => {
     return{
