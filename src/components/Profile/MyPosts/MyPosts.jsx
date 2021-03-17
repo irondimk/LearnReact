@@ -5,16 +5,18 @@ import { Form, Field } from 'react-final-form';
 import FormStateToRedux from './../../../redux/FormStateToRedux';
 import { composeValidators, maxCount, required } from '../../../utils/validators';
 
-const MyPosts = (props) => {
-  let jsxPosts = props.profilePage.posts.map(
-    (elem) => {
-      return <Post likescount={elem.likes} message={elem.message} avasrc={elem.avatarsrc} />
-    }
-  )
+class MyPosts extends React.PureComponent {
 
-  let onSubmit = (values) => {
-    props.addPost(values.postText)
-  };
+  render(){
+    let jsxPosts = this.props.profilePage.posts.map(
+      (elem) => {
+        return <Post likescount={elem.likes} message={elem.message} avasrc={elem.avatarsrc} />
+      }
+    )
+  
+    let onSubmit = (values) => {
+      this.props.addPost(values.postText)
+    };
 
   return (
     <div className={classes.posts}>
@@ -60,6 +62,7 @@ const MyPosts = (props) => {
       </div>
     </div>
   );
+}
 }
 
 export default MyPosts;
