@@ -1,12 +1,12 @@
 import { userAPI } from "../api/api";
 
-const FOLLOW = 'FOLLOW';
-const UNFOLLOW = 'UNFOLLOW';
-const SETUSERS = 'SET_USERS';
-const SETCOUNT = 'SET_COUNT';
-const SETCURRENTPAGE = 'SET_CURRENT_PAGE';
-const TOGGLEPRELOADER = 'TOGGLE_PRELOADER';
-const TOGGLE_IS_FOLLOWING_PROCESS = 'TOGGLE_IS_FOLLOWING_PROCESS';
+const FOLLOW = 'users/FOLLOW';
+const UNFOLLOW = 'users/UNFOLLOW';
+const SETUSERS = 'users/SET_USERS';
+const SETCOUNT = 'users/SET_COUNT';
+const SETCURRENTPAGE = 'users/SET_CURRENT_PAGE';
+const TOGGLEPRELOADER = 'users/TOGGLE_PRELOADER';
+const TOGGLE_IS_FOLLOWING_PROCESS = 'users/TOGGLE_IS_FOLLOWING_PROCESS';
 
 let initialState = {
     users: [],
@@ -21,20 +21,6 @@ const usersReducer = (state = initialState, action) => {
     switch (action.type) {
 
         case FOLLOW: {
-            let newState = {
-                ...state, users:
-                    state.users.map((elem) => {
-                        if (elem.id == action.userid) {
-                            elem.followed = !elem.followed;
-                            return (elem);
-                        }
-                        return (elem);
-                    })
-            }
-            return newState;
-        }
-
-        case UNFOLLOW: {
             let newState = {
                 ...state, users:
                     state.users.map((elem) => {
@@ -124,39 +110,40 @@ export const setUsersAC = (users) => {
 
 
 export const getUsersThunk = (currentPage, pageSize) => {
-    return (dispatch) => {
+    return async (dispatch) => {
         dispatch(togglePreloaderAC(true));
-        userAPI.getUsers(currentPage, pageSize).then(response => {
-            dispatch(togglePreloaderAC(false));
-            dispatch(setUsersAC(response.items));
-            dispatch(setCountUsersAC(response.totalCount));
-        });
+        let response = await userAPI.getUsers(currentPage, pageSize)
+        dispatch(togglePreloaderAC(false));
+        dispatch(setUsersAC(response.items));
+        dispatch(setCountUsersAC(response.totalCount));
     }
 }
 
+
+const followUnfollowLogic = async (dispatch, id, typeFunctionParent) => {
+    dispatch(toggleIsFollowingProcessAC(true));
+    let response;
+    if (typeFunctionParent == "follow") {
+        response = await userAPI.follow(id)
+    }
+    else {
+        response = await userAPI.unfollow(id)
+    }
+    if (response.resultCode == 0) {
+        dispatch(followAC(id));
+    }
+    dispatch(toggleIsFollowingProcessAC(false));
+}
+
 export const follow = (id) => {
-    debugger;
-    return (dispatch) => {
-        dispatch(toggleIsFollowingProcessAC(true));
-        userAPI.follow(id).then(response => {
-            if(response.resultCode == 0){
-                dispatch(followAC(id));
-            }
-            dispatch(toggleIsFollowingProcessAC(false));
-        });
+    return async (dispatch) => {
+        followUnfollowLogic(dispatch, id, "follow");
     }
 }
 
 export const unfollow = (id) => {
-    debugger;
-    return (dispatch) => {
-        dispatch(toggleIsFollowingProcessAC(true));
-        userAPI.unfollow(id).then(response => {
-            if(response.resultCode == 0){
-                dispatch(unfollowAC(id));
-            }
-            dispatch(toggleIsFollowingProcessAC(false));
-        });
+    return async (dispatch) => {
+        followUnfollowLogic(dispatch, id, "unfollow");
     }
 }
 
