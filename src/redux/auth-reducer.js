@@ -1,8 +1,8 @@
 import { userAPI } from "../api/api";
 
-const SET_USER_DATA = 'SET_USER_DATA';
-const DELETE_USER_DATA = 'DELETE_USER_DATA';
-const LOSE_TRY_ENTER = 'LOSE_TRY_ENTER';
+const SET_USER_DATA = 'auth/SET_USER_DATA';
+const DELETE_USER_DATA = 'auth/DELETE_USER_DATA';
+const LOSE_TRY_ENTER = 'auth/LOSE_TRY_ENTER';
 
 let initialState = {
     userId: null, 
@@ -56,47 +56,40 @@ export const falseTryIsEnterAC = () => {
 }
 
 export const auth = () => {
-    return (dispatch) => {
-        userAPI.auth()
-        .then(response => {       
+    return async (dispatch) => {
+        let response = await userAPI.auth();
            if(response.resultCode == 0){
                dispatch(setAuthUserData(response.data.id,
                 response.data.email,
                 response.data.login));
            }
-        });
+        
     }
 }
 
 export const enterSite = (email, password, rememberMe) => {
-    return (dispatch) => {
-        userAPI.enterSite(email, password, rememberMe)
-        .then(response => {
+    return async (dispatch) => {
+        let response = await userAPI.enterSite(email, password, rememberMe)
            if(response.resultCode == 0){
-               userAPI.auth()
-                .then(response => {       
+               response = await userAPI.auth()       
                 if(response.resultCode == 0){
                     dispatch(setAuthUserData(response.data.id,
                         response.data.email,
                         response.data.login));
                 }
-                });
            }
            else{
                dispatch(falseTryIsEnterAC());
            }
-        });
     }
 }
 
 export const exitSite = () => {
-    return (dispatch) => {
-        userAPI.exitSite()
-        .then(response => {
+    return async (dispatch) => {
+        let response = await userAPI.exitSite()
            if(response.resultCode == 0){
                dispatch(deleteAuthUserData(null, null, null));
            }
-        });
     }
 }
 
