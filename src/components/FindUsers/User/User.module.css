@@ -67,6 +67,10 @@
 
 .selectedPage{
     font-weight: 700;
+    margin-right: 4px;
+}
+.unselectedPage{
+    margin-right: 4px;
 }
 .preloaderContainer{
     position: relative;

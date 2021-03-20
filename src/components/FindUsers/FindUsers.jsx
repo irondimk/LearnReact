@@ -21,7 +21,7 @@ let FindUsers = (props) => {
             <div>
             {
                 numberPages.map(elem => {
-                    return(<span onClick={()=> props.pageChanged(elem)} className={props.currentPage === elem && classes.selectedPage}>{elem} </span>)
+                    return(<span onClick={()=> props.pageChanged(elem)} className={props.currentPage === elem ? classes.selectedPage : classes.unselectedPage}>{elem} </span>)
                 })
             }
                 
