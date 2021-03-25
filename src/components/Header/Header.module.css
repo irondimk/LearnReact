@@ -33,6 +33,7 @@
     font-size: 16px;
     border-radius: 5px;
     margin-top: 10px;
+    display: flex;
   }
 
   .loginBlock{
@@ -50,10 +51,19 @@
     margin-right: 10px;
   }
 
+  .logoutImage{
+    width: 20px;
+    margin-right: 10px;
+  }
+
   .loginText{
     margin-top: 4px;
   }
 
   .loginTextBlock{
+    margin-top: 1px;
+  }
+
+  .logoutTextBlock{
     margin-top: 1px;
   }
