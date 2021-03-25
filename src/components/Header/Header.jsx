@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
-
+import signInPic from './../../assets/images/header/signin.png';
 
 class Header extends React.Component{
 
@@ -29,7 +29,19 @@ class Header extends React.Component{
             <div className={classes.wrapper}>
                 <img className={classes.image} src="http://aimtechmyanmar.com/assets/img/logo/wifi/wifiprojectmanagement.png"></img>
                 <div>
-                {this.state.isAuth ? <div><div className={classes.welcomeText}><p>Hello, {this.state.login}</p></div> <div><a href="#" className={classes.logout} onClick={this.props.exitSite}>Logout</a></div> </div> :<div  className={classes.loginBlock}> <NavLink className={classes.loginText} to={'/login'}>Login</NavLink> </div>}
+                {this.state.isAuth ? 
+                <div><div className={classes.welcomeText}><p>Hello, {this.state.login}</p></div> 
+                <div><a href="#" className={classes.logout} onClick={this.props.exitSite}>Logout</a></div> </div> :
+                <div className={classes.loginBlock}> 
+                    <NavLink className={classes.loginButton} to={'/login'}>
+                        <img src={signInPic} className={classes.loginImage}/>
+                        <div className={classes.loginTextBlock}> 
+                            <span className={classes.loginText}>
+                            Login
+                            </span>
+                        </div>
+                    </NavLink> 
+                </div>}
                     
                 </div>
             </div>
