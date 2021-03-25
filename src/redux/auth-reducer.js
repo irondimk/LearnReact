@@ -3,7 +3,7 @@ import { userAPI } from "../api/api";
 const SET_USER_DATA = 'auth/SET_USER_DATA';
 const DELETE_USER_DATA = 'auth/DELETE_USER_DATA';
 const LOSE_TRY_ENTER = 'auth/LOSE_TRY_ENTER';
-
+const SET_UNAUTH_USER_DATA = 'auth/SET_UNAUTH_USER';
 let initialState = {
     userId: null, 
     email: null,
@@ -19,6 +19,11 @@ const authReducer = (state = initialState, action) => {
         case SET_USER_DATA:{
             return{
                 ...state, ...action.data, isAuth: true, lastTryIsFalse: false, isLoadComplete: true 
+            }
+        }
+        case SET_UNAUTH_USER_DATA: {
+            return{
+                ...state, isAuth: false, lastTryIsFalse: false, isLoadComplete: true 
             }
         }
         case DELETE_USER_DATA: {
@@ -55,7 +60,14 @@ export const falseTryIsEnterAC = () => {
     }
 }
 
+export const setUnauthorizatUser = () => {
+    return{
+        type: SET_UNAUTH_USER_DATA,
+    }
+}
+
 export const auth = () => {
+    // debugger;
     return async (dispatch) => {
         let response = await userAPI.auth();
            if(response.resultCode == 0){
@@ -63,7 +75,9 @@ export const auth = () => {
                 response.data.email,
                 response.data.login));
            }
-        
+           else{
+            dispatch(setUnauthorizatUser());
+           }
     }
 }
 
