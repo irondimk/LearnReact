@@ -1,9 +1,9 @@
   .image{
-    width: 100px;
+    width: 80px;
   }
   
   .wrapper{
-    background: green;
+    background:#5a7cbd;
     margin-top: 10px;
     padding: 10px;
     width: 900px;
@@ -14,11 +14,12 @@
 
   .loginText{
     display: block;
-    padding: 5px 10px;
-    background: rgb(80, 79, 79);
-    color: green;
+    padding: 6px 24px;
+    background: #F1F2F8;
+    color: #514DA7;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 16px;
+    border-radius: 5px;
   }
 
   .logout{

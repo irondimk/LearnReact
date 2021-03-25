@@ -1,8 +1,10 @@
+/* @import './../../utils/fonts.css'; */
+
 
 .nav{
-    background: green;
+    background:#5a7cbd;
     padding: 10px 0 10px 10px;
-    margin-right: 10px;
+    width: 26%;
   }
   
   .ul{
@@ -20,14 +22,19 @@
     color: white;
     font-size: 19px;
     display: block;
-    padding: 4px 8px;
-    border-radius: 5px 5px 0 -10px;
+    padding: 12px 16px;
+    border-radius: 5px 0 0 5px;
+    position: relative;
+    font-family: 'Montserrat', sans-serif;
   }
+
 
   .link:hover{
     background: blue;
+    color: white;
   }
 
   .activelink{
-    background: gold;
+    background: #F1F2F8;
+    color: #514DA7;
   }

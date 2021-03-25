@@ -32,6 +32,7 @@ return (
         <HeaderContainer/>
         <div className="wrapper center">
           <Navbar />
+          <div className="content">
           <Route path='/profile/:userId?' render={() => <ProfileContainer/>} />
           <Suspense fallback={<div>Загрузка...</div>}>
           <Route path="/dialogs" render={() => <Dialogs/>} />
@@ -41,6 +42,7 @@ return (
           <Route path="/settings" render={() => <Settings/>} />
           <Route path="/find-users" render={() => <FindUsersContainer/>} />
           <Route path="/login" render={() => <LoginContainer/>} />
+          </div>
         </div>
       </div>
     </BrowserRouter>
