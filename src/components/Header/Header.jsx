@@ -28,8 +28,8 @@ class Header extends React.Component{
         <header>
             <div className={classes.wrapper}>
                 <img className={classes.image} src="http://aimtechmyanmar.com/assets/img/logo/wifi/wifiprojectmanagement.png"></img>
-                <div className={classes.loginBlock}>
-                {this.state.isAuth ? <div><div><p>Hello {this.state.login}</p></div> <div><a href="#" className={classes.logout} onClick={this.props.exitSite}>Logout</a></div> </div> : <NavLink className={classes.loginText} to={'/login'}>Login</NavLink>}
+                <div>
+                {this.state.isAuth ? <div><div className={classes.welcomeText}><p>Hello, {this.state.login}</p></div> <div><a href="#" className={classes.logout} onClick={this.props.exitSite}>Logout</a></div> </div> :<div  className={classes.loginBlock}> <NavLink className={classes.loginText} to={'/login'}>Login</NavLink> </div>}
                     
                 </div>
             </div>

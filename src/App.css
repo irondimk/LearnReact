@@ -7,13 +7,15 @@
 
 .center{
   display: flex;
-  background: #F1F2F8;
+  background: #5a7cbd;
 }
 
 
 .content{
   width: 100%;
   padding: 10px;
+  border-radius: 4px;
+  background: #F1F2F8;
 }
 
 .fon{

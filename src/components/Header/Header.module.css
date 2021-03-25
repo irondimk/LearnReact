@@ -1,5 +1,6 @@
   .image{
     width: 80px;
+    margin-left: 40px;
   }
   
   .wrapper{
@@ -13,19 +14,33 @@
   }
 
   .loginText{
-    display: block;
+    display: inline-block;
     padding: 6px 24px;
     background: #F1F2F8;
-    color: #514DA7;
+    color: #5a7cbd;
     font-weight: 600;
     font-size: 16px;
     border-radius: 5px;
+    margin: auto 0;
   }
 
   .logout{
-    margin-top: 20px;
     display: inline-block;
-    padding: 5px 10px;
-    background: grey;
-    color: white;
+    padding: 6px 24px;
+    background: #F1F2F8;
+    color: #5a7cbd;
+    font-weight: 600;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+
+  .loginBlock{
+    display: flex;
+    height: 100%;
+  }
+
+  .welcomeText{
+    font-size: 16px;
+    font-weight: 600;
   }
