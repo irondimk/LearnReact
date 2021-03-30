@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import classes from './Header.module.css';
 import signInPic from './../../assets/images/header/signin.png';
 import logoutPic from './../../assets/images/header/logout.png';
-
+import logoPic from './../../assets/images/header/logo.png';
 class Header extends React.Component{
 
     state = {
@@ -28,7 +28,7 @@ class Header extends React.Component{
     return (
         <header>
             <div className={classes.wrapper}>
-                <img className={classes.image} src="http://aimtechmyanmar.com/assets/img/logo/wifi/wifiprojectmanagement.png"></img>
+                <img className={classes.image} src={logoPic}></img>
                 <div>
                 {this.state.isAuth ? 
                 <div>
