@@ -48,7 +48,7 @@ class Header extends React.Component{
                 </div> 
                 :
                 <div className={classes.loginBlock}> 
-                    <NavLink className={classes.loginButton} to={'/login'}>
+                    <NavLink activeClassName={classes.loginPageNow} className={classes.loginButton} to={'/login'}>
                         <img src={signInPic} className={classes.loginImage}/>
                         <div className={classes.loginTextBlock}> 
                             <span className={classes.loginText}>
