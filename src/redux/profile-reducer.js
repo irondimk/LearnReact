@@ -5,7 +5,7 @@ const EDIT_TEXT_NEW_POST = 'profile/EDIT-TEXT-NEW-POST';
 const SET_USER_PROFILE = 'profile/SET-USER-PROFILE';
 const SET_USER_STATUS = 'profile/SET_USER_STATUS';
 const DELETE_POST = 'profile/DELETE-POST';
-
+const SAVE_PHOTO_ACCESS = 'profile/SAVE_PHOTO_ACCESS';
 let initialState = {
     posts: [
         { id: 0, likes: 11, message: "Жак Фреско", avatarsrc: "https://im0-tub-ru.yandex.net/i?id=b57ab827966c1edd0748c1eb53fe6a2e&n=13&exp=1" },
@@ -47,6 +47,9 @@ const profileReducer = (state = initialState, action) => {
         }
         case DELETE_POST: {
             return { ...state, posts: state.posts.filter(p => p.id !== action.postId) }
+        }
+        case SAVE_PHOTO_ACCESS: {
+            return { ...state, profile: {...state.profile, photos: action.photos} }
         }
         default: return state;
     }
@@ -105,6 +108,13 @@ export const editTextNewPostActionCreate = (text) => {
     }
 }
 
+export const updatePhotoProfile = (photos) => {
+    return{
+        type: SAVE_PHOTO_ACCESS, 
+        photos
+    }
+}
+
 export const openUserProfile = (idUser) => {
     return async (dispatch) => {
         let response = await profileAPI.userProfile(idUser);
@@ -119,6 +129,15 @@ export const updateStatus = (status) => {
         let response = await profileAPI.updateStatus(status)
         if (response.resultCode === 0) {
             dispatch(setUserStatus(status));
+        }
+    }
+}
+
+export const uploadUserPhoto = (photo) => {
+    return async (dispatch) => {
+        let response = await profileAPI.uploadUserPhoto(photo)
+        if (response.resultCode === 0) {
+            dispatch(updatePhotoProfile(response.data.photos));
         }
     }
 }

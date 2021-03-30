@@ -9,13 +9,33 @@ import uploadPhotoIcon from './../../../assets/images/profile/uploadNewPhoto.png
 const ProfileInfo = (props) => {
 
   let [uploadPhotoVisual, uploadPhotoVisualSet] = useState(false);
+  // let [newPhoto, setNewPhoto] = useState(null);
+  let [isSelectPhoto, setIsSelectPhoto] = useState(true);
+
+  // newPhoto = React.createRef();
+
+  let uploadNewPhotoUser = (e) => {
+    props.uploadUserPhoto(e.target.files[0]);
+    setIsSelectPhoto(true);
+    uploadPhotoVisualSet(false);
+  }
+
+  let userChoosePhoto = () => {
+    setIsSelectPhoto(false);
+  }
 
   let showUploadPhotoBlock = () => {
     uploadPhotoVisualSet(true);
   }
 
   let hideUploadPhotoBlock = () => {
-    uploadPhotoVisualSet(false);
+    if(isSelectPhoto == false){
+
+    }
+    else{
+      uploadPhotoVisualSet(false);
+    }
+    
   }
 
   if (!props.profile) {
@@ -29,14 +49,18 @@ const ProfileInfo = (props) => {
 
       <div className={classes.wrapper}>
       <div className={classes.photoBlock}> 
-        <img className={classes.photoUser} onMouseOver={showUploadPhotoBlock}  src={props.profile.photos.large || defaultPicUserProfile} />
-        {uploadPhotoVisual ? <div onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
+        <img className={classes.photoUser} onMouseOver={props.canEditProfile ? showUploadPhotoBlock : {}}  src={props.profile.photos.large || defaultPicUserProfile} />
+        {uploadPhotoVisual ? 
+        <label onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
+          <input onClick={userChoosePhoto} onPointerCancel={() => {console.log("cancel")}}  onChange={ uploadNewPhotoUser.bind(this) } className={classes.invisibleInput} type="file"/>
           <p>Upload <br/> new profile photo</p>
           <img className={classes.uploadPic} src={uploadPhotoIcon} />
-        </div> : 
+          
+        </label> : 
         <div> </div>
         }
         
+        {/* <input type="file" name="AddImage" id="AddImage" accept="image/*" /> */}
       </div>
         
         <div className={classes.info}>
