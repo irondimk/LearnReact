@@ -29,7 +29,7 @@ let FindUsers = (props) => {
                 {
                     props.users.map(elem => {
                         {
-                        return (<UserContainer id={elem.id} photos={elem.photos} name={elem.name} status={elem.status} followed={elem.followed} unfollow={props.unfollow} follow={props.follow} avatarSrc={'https://im0-tub-ru.yandex.net/i?id=0ea34b256aa4cadbdf4631f375db89c7&n=13&exp=1'} />) }
+                        return (<UserContainer id={elem.id} photos={elem.photos} name={elem.name} status={elem.status} followed={elem.followed} unfollow={props.unfollow} follow={props.follow} />) }
                     })
                 }
             </div>

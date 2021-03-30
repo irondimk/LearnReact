@@ -1,6 +1,7 @@
 import React from 'react';
 import classes from './User.module.css';
 import { NavLink } from 'react-router-dom';
+import defaultPicUserProfile from './../../../assets/images/user/userWithoutPhoto.png';
 
 let User = (props) => {
     let follow = (id) => {
@@ -14,7 +15,7 @@ let User = (props) => {
             <div>
                 <NavLink to={'profile/' + props.id}>
                 {props.photos.small ? <img src={props.photos.small} alt="" className={classes.avatar}/>
-                :  <img src={props.avatarSrc} alt="" className={classes.avatar}/>
+                :  <img src={defaultPicUserProfile} alt="" className={classes.avatar}/>
                 }
                 </NavLink>
                 

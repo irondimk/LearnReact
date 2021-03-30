@@ -5,7 +5,7 @@ import {toggleIsFollowingProcessAC, follow, unfollow} from './../../../redux/use
 
 let UsersContainer = (props) => {
     return(
-        <User isFollowingProcess={props.isFollowingProcess} id={props.id} photos={props.photos} name={props.name} status={props.status} followed={props.followed} unfollow={props.unfollow} follow={props.follow} avatarSrc={'https://im0-tub-ru.yandex.net/i?id=0ea34b256aa4cadbdf4631f375db89c7&n=13&exp=1'}/>
+        <User isFollowingProcess={props.isFollowingProcess} id={props.id} photos={props.photos} name={props.name} status={props.status} followed={props.followed} unfollow={props.unfollow} follow={props.follow}/>
     )
 }
 
