@@ -1,11 +1,23 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Preloader from '../../Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
 import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 import defaultPicUserProfile from './../../../assets/images/user/userWithoutPhoto.png';
+import uploadPhotoIcon from './../../../assets/images/profile/uploadNewPhoto.png';
 
 const ProfileInfo = (props) => {
+
+  let [uploadPhotoVisual, uploadPhotoVisualSet] = useState(false);
+
+  let showUploadPhotoBlock = () => {
+    uploadPhotoVisualSet(true);
+  }
+
+  let hideUploadPhotoBlock = () => {
+    uploadPhotoVisualSet(false);
+  }
+
   if (!props.profile) {
     return (<Preloader />)
   }
@@ -16,7 +28,17 @@ const ProfileInfo = (props) => {
       </div>
 
       <div className={classes.wrapper}>
-        <img className={classes.photoUser} src={props.profile.photos.large || defaultPicUserProfile} />
+      <div className={classes.photoBlock}> 
+        <img className={classes.photoUser} onMouseOver={showUploadPhotoBlock}  src={props.profile.photos.large || defaultPicUserProfile} />
+        {uploadPhotoVisual ? <div onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
+          <p>Upload <br/> new profile photo</p>
+          <img className={classes.uploadPic} src={uploadPhotoIcon} />
+        </div> : 
+        <div> </div>
+        }
+        
+      </div>
+        
         <div className={classes.info}>
           <p className={classes.name}>Name: {props.profile.fullName}</p>
           <p className={classes.about}>About me: {props.profile.aboutMe}</p>

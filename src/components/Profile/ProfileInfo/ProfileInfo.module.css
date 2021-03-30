@@ -32,3 +32,27 @@
     height: 250px;
     border-radius: 5px;
 }
+.photoBlock{
+    position: relative;
+}
+
+.uploadProfilePhotoBlock{
+    width: 250px;
+    height: 250px;
+    background: #33333371;
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: white;
+    text-align: center;
+    padding-top: 20%;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: initial;
+}
+
+.uploadPic{
+    width: 100px;
+    height: 100px;
+    opacity: 0.7;
+}
