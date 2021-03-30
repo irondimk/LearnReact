@@ -5,14 +5,12 @@ import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 import defaultPicUserProfile from './../../../assets/images/user/userWithoutPhoto.png';
 import uploadPhotoIcon from './../../../assets/images/profile/uploadNewPhoto.png';
+import SocialNetworkIconFind from './SocialNetworkIconFind';
 
 const ProfileInfo = (props) => {
 
   let [uploadPhotoVisual, uploadPhotoVisualSet] = useState(false);
-  // let [newPhoto, setNewPhoto] = useState(null);
   let [isSelectPhoto, setIsSelectPhoto] = useState(true);
-
-  // newPhoto = React.createRef();
 
   let uploadNewPhotoUser = (e) => {
     props.uploadUserPhoto(e.target.files[0]);
@@ -29,14 +27,11 @@ const ProfileInfo = (props) => {
   }
 
   let hideUploadPhotoBlock = () => {
-    if(isSelectPhoto == false){
-
-    }
-    else{
+    if(isSelectPhoto){
       uploadPhotoVisualSet(false);
     }
-    
   }
+
 
   if (!props.profile) {
     return (<Preloader />)
@@ -49,24 +44,49 @@ const ProfileInfo = (props) => {
 
       <div className={classes.wrapper}>
       <div className={classes.photoBlock}> 
-        <img className={classes.photoUser} onMouseOver={props.canEditProfile ? showUploadPhotoBlock : {}}  src={props.profile.photos.large || defaultPicUserProfile} />
+        <img className={classes.photoUser} onMouseOver={props.canEditProfile ? showUploadPhotoBlock : null}  src={props.profile.photos.large || defaultPicUserProfile} />
         {uploadPhotoVisual ? 
         <label onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
-          <input onClick={userChoosePhoto} onPointerCancel={() => {console.log("cancel")}}  onChange={ uploadNewPhotoUser.bind(this) } className={classes.invisibleInput} type="file"/>
+          <input onClick={userChoosePhoto}  onChange={ uploadNewPhotoUser.bind(this) } className={classes.invisibleInput} type="file"/>
           <p>Upload <br/> new profile photo</p>
           <img className={classes.uploadPic} src={uploadPhotoIcon} />
           
         </label> : 
         <div> </div>
         }
-        
-        {/* <input type="file" name="AddImage" id="AddImage" accept="image/*" /> */}
       </div>
         
         <div className={classes.info}>
-          <p className={classes.name}>Name: {props.profile.fullName}</p>
-          <p className={classes.about}>About me: {props.profile.aboutMe}</p>
-          {props.profile.lookingForAJob ? <p>Мне нужна работа</p> : <p>Уже работаю</p>}
+          <div className={classes.nameBlock}>
+          <p className={classes.name}>
+            {props.profile.fullName}
+            </p>
+          </div>
+
+          <div className={classes.infoBlock}>
+          <h3 className={classes.infoTittle}>Работа</h3>
+            <p className={classes.description}> 
+              Статус поиска работы: 
+              {props.profile.lookingForAJob ? 
+              <span> Мне нужна работа</span> : 
+              <span> Уже работаю</span>} 
+            </p>
+            <p className={classes.description}> 
+              Описание:
+              <span> {props.profile.lookingForAJobDescription}</span>
+            </p>
+          </div>
+          
+          <div className={classes.infoBlock}>
+          <h3 className={classes.infoTittle}>Мои социальные сети</h3>
+                <div className={classes.socialNetworksWrapper}>
+                {SocialNetworkIconFind(props.profile.contacts)}
+                </div>
+            
+            
+            
+          </div>
+
         </div>
       </div>
     </div>

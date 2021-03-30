@@ -14,6 +14,7 @@
 
 .name{
     font-weight: 600;
+    font-size: 18px;
 }
 
 .about{
@@ -34,6 +35,9 @@
 }
 .photoBlock{
     position: relative;
+    background: #5a7cbd;
+    padding: 10px;
+    border-radius: 8px;
 }
 
 .uploadProfilePhotoBlock{
@@ -41,8 +45,8 @@
     height: 250px;
     background: #33333371;
     position: absolute;
-    left: 0;
-    top: 0;
+    left: 10px;
+    top: 10px;
     color: white;
     text-align: center;
     padding-top: 20%;
@@ -59,4 +63,44 @@
 
 .invisibleInput{
     display: none;
+}
+
+.description{
+    color: #F1F2F8;
+    margin-bottom: 6px;
+}
+
+.nameBlock{
+    background: white;
+    padding: 4px;
+    margin-bottom: 12px;
+}
+
+.infoBlock{
+    background: #5a7cbd;
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.infoTittle{
+    font-weight: 600;
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.socialNetworkLogo{
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin-right: 8px;
+}
+
+.socialNetworkLogoPic{
+    width: 60px;
+    height: 60px;
+}
+
+.socialNetworksWrapper{
+    display: flex;
 }
