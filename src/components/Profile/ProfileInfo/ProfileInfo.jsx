@@ -12,7 +12,7 @@ const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-      <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+      <ProfileStatusWithHooks canEditProfile={props.canEditProfile} status={props.status} updateStatus={props.updateStatus}/>
       </div>
 
       <div className={classes.wrapper}>
