@@ -25,3 +25,10 @@
 .status_input{
     border: 1px solid black;
 }
+
+
+.photoUser{
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+}
