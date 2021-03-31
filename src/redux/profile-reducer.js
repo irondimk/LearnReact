@@ -116,8 +116,10 @@ export const updatePhotoProfile = (photos) => {
 }
 
 export const openUserProfile = (idUser) => {
+   
     return async (dispatch) => {
         let response = await profileAPI.userProfile(idUser);
+        
         dispatch(setUserProfile(response));
         response = await profileAPI.getStatus(idUser);
         dispatch(setUserStatus(response));

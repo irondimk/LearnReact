@@ -81,6 +81,7 @@
     padding: 8px;
     border-radius: 4px;
     margin-bottom: 8px;
+    position: relative;
 }
 
 .infoTittle{
@@ -96,6 +97,10 @@
     margin-right: 8px;
 }
 
+.socialNetworkLogo:last-child{
+    margin-right: 0;
+}
+
 .socialNetworkLogoPic{
     width: 60px;
     height: 60px;
@@ -103,4 +108,17 @@
 
 .socialNetworksWrapper{
     display: flex;
+}
+
+.editProfileLink{
+    position: absolute;
+    right: 4px;
+    top: 4px;
+    text-decoration: none;
+    color: #F1F2F8;
+    font-size: 12px;
+}
+
+.editProfileLink:hover{
+    text-decoration: underline;
 }

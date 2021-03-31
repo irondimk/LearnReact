@@ -12,7 +12,6 @@ import classes from './ProfileInfo.module.css';
 
 
 const SocialNetworkIconFind = (contacts) => {
-    console.log(youtube);
     let iconsArr = [youtube, facebook, twitter, vk, github, website, instagram, mail];
     let iconsNameArr = ["youtube", "facebook", "twitter", "vk", "github", "website", "instagram", "mainLink"];
 
@@ -30,7 +29,6 @@ const SocialNetworkIconFind = (contacts) => {
                     <a href={url} className={classes.socialNetworkLogo}>
                         <img className={classes.socialNetworkLogoPic} src={iconsArr[index]}/>
                     </a>
-                
                 )
             }
         }

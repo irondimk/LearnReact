@@ -67,7 +67,6 @@ export const setUnauthorizatUser = () => {
 }
 
 export const auth = () => {
-    // debugger;
     return async (dispatch) => {
         let response = await userAPI.auth();
            if(response.resultCode == 0){

@@ -14,6 +14,7 @@ import LoginContainer from './components/Login/LoginContainer';
 import {auth} from './redux/auth-reducer';
 import { connect } from 'react-redux';
 import { compose } from 'redux';
+import SettingsContainer from './components/Settings/SettingsContainer';
 //lazy load
 const Dialogs = React.lazy(()=> import ('./components/Dialogs/DialogsContainer'));
 const News = React.lazy(()=> import ('./components/News/News'));
@@ -39,7 +40,7 @@ return (
           <Route path="/news" render={() => <News/>} />
           <Route path="/music" render={() => <Music/>} /> 
           </Suspense>
-          <Route path="/settings" render={() => <Settings/>} />
+          <Route path="/settings" render={() => <SettingsContainer/>} />
           <Route path="/find-users" render={() => <FindUsersContainer/>} />
           <Route path="/login" render={() => <LoginContainer/>} />
           </div>

@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import Preloader from '../../Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
-import ProfileStatus from './ProfileStatus/ProfileStatus';
 import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
 import defaultPicUserProfile from './../../../assets/images/user/userWithoutPhoto.png';
 import uploadPhotoIcon from './../../../assets/images/profile/uploadNewPhoto.png';
 import SocialNetworkIconFind from './SocialNetworkIconFind';
+import { NavLink } from 'react-router-dom';
 
 const ProfileInfo = (props) => {
 
@@ -64,7 +64,8 @@ const ProfileInfo = (props) => {
           </div>
 
           <div className={classes.infoBlock}>
-          <h3 className={classes.infoTittle}>Работа</h3>
+            {props.canEditProfile ? <NavLink to="settings" className={classes.editProfileLink}>Edit</NavLink> : <div></div>}
+            <h3 className={classes.infoTittle}>Работа</h3>
             <p className={classes.description}> 
               Статус поиска работы: 
               {props.profile.lookingForAJob ? 
@@ -77,6 +78,8 @@ const ProfileInfo = (props) => {
             </p>
           </div>
           
+
+
           <div className={classes.infoBlock}>
           <h3 className={classes.infoTittle}>Мои социальные сети</h3>
                 <div className={classes.socialNetworksWrapper}>
