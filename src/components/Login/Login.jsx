@@ -9,7 +9,7 @@ class Login extends React.Component {
     sleep = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
     onSubmit = (values) => {
-        this.props.enterSite(values.login, values.password, values.rememberme);
+        this.props.enterSite(values.login, values.password, values.rememberme, values.captcha);
     };
 
     render() {
@@ -46,6 +46,17 @@ class Login extends React.Component {
                                         </div>
                                     )}
                                 </Field>
+                                {this.props.captcha ? 
+                                <Field name={"captcha"} id={"captcha"} >
+                                    {({ input, meta }) => (
+                                        <div className={classes.captchaDiv}>
+                                            <img className={classes.captchaImg} src={this.props.captcha}/>
+                                            <input {...input} className={classes.input} type="text" />
+                                            {meta.error && meta.touched && <span className={classes.errorSpan}>{meta.error}</span>}
+                                        </div>
+                                    )}
+                                </Field> : <> </>
+                            }
                                 <div className={classes.inputDiv}>
                                     <span>
                                         <Field id={"rememberMeCheckbox"} type={"checkbox"} name={"rememberme"} component={"input"} />

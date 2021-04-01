@@ -72,13 +72,18 @@ export const userAPI = {
             return response.data
         })
     },
-    enterSite(email, password, rememberMe){
-        return instance.post(`/auth/login`, {email, password, rememberMe}).then(response => {
+    enterSite(email, password, rememberMe, captcha){
+        return instance.post(`/auth/login`, {email, password, rememberMe, captcha}).then(response => {
             return response.data;
         })
     },
     exitSite(){
         return instance.delete(`/auth/login`, {}).then(response => {
+            return response.data;
+        })
+    },
+    captcha(){
+        return instance.get(`/security/get-captcha-url`, {}).then(response => {
             return response.data;
         })
     }

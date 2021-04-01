@@ -15,13 +15,12 @@
 .inputDiv{
     display: flex;
     justify-content: space-between;
-    margin-bottom: 8px;
     position: relative;
+    margin-bottom: 8px;
 }
 .input{
     border: 1px solid rgb(194, 194, 194);
     padding: 4px;
-    margin-left: 8px;
     width: 260px;
 }
 
@@ -45,4 +44,10 @@
 .errorAutorization{
     color: red;
     font-weight: 600;
+}
+.captchaDiv{
+    margin-bottom: 8px;
+}
+.captchaImg{
+    margin-bottom: 6px;
 }
