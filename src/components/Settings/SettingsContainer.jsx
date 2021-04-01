@@ -3,6 +3,7 @@ import Settings from "./Settings";
 import React, {useEffect} from 'react';
 import { LoginHOC } from "../HOC/LoginHOC";
 import { openUserProfile, updateProfile } from "../../redux/profile-reducer";
+import Preloader from "../Preloader/Preloader";
 
 let mapStateToProps = (state) => {
     if(state.profilePage.profile == null){
@@ -43,14 +44,19 @@ let SettingsAuthContainer = (props) => {
         console.log(props.userId);
         props.openUserProfile(props.userId)
     })
-
-    return (<SettingsContainer props={props}/>)
+    
+    return (
+    <>
+    {props.isPreloaderShow ? <Preloader/> : <SettingsContainer props={props}/> }
+    </>
+    )
 }
 
 let authMapStateToProps = (state) => {
     return(
         {
             userId: state.auth.userId,
+            isPreloaderShow: state.profilePage.isPreloaderShow
         }
     );
 }

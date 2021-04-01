@@ -6,7 +6,9 @@ const SET_USER_PROFILE = 'profile/SET-USER-PROFILE';
 const SET_USER_STATUS = 'profile/SET_USER_STATUS';
 const DELETE_POST = 'profile/DELETE-POST';
 const SAVE_PHOTO_ACCESS = 'profile/SAVE_PHOTO_ACCESS';
-const UPDATE_JOB_PROFILE = 'profile/UPDATE_JOB_PROFILE';
+const UPDATE_PROFILE = 'profile/UPDATE_PROFILE';
+const SHOW_PRELOADER = 'profile/SHOW_PRELOADER';
+
 let initialState = {
     posts: [
         { id: 0, likes: 11, message: "Жак Фреско", avatarsrc: "https://im0-tub-ru.yandex.net/i?id=b57ab827966c1edd0748c1eb53fe6a2e&n=13&exp=1" },
@@ -14,7 +16,8 @@ let initialState = {
     ],
     newPostText: "irondimk",
     profile: null,
-    status: ""
+    status: "",
+    isPreloaderShow: false
 }
 
 const profileReducer = (state = initialState, action) => {
@@ -52,8 +55,16 @@ const profileReducer = (state = initialState, action) => {
         case SAVE_PHOTO_ACCESS: {
             return { ...state, profile: {...state.profile, photos: action.photos} }
         }
-        case UPDATE_JOB_PROFILE: {
-            return { ...state, profile: {...state.profile, lookingForAJob: action.isNeedWork, lookingForAJobDescription: action.aboutMe} }
+        case UPDATE_PROFILE: {
+            let photos = state.profile.photos;
+            let newState = {...state};
+            newState.profile = {...action.profile};
+            newState.profile.photos = {...photos};
+            return newState;
+        }
+        case SHOW_PRELOADER: {
+            debugger;
+            return { ...state, isPreloaderShow: !state.isPreloaderShow}
         }
         default: return state;
     }
@@ -119,10 +130,16 @@ export const updatePhotoProfile = (photos) => {
     }
 }
 
-export const updateProfileJob = (isNeedWork, aboutMe) => {
+export const updateProfileJob = (profile) => {
     return{
-        type: UPDATE_JOB_PROFILE,
+        type: UPDATE_PROFILE,
+        profile
+    }
+}
 
+const showPreloader = () => {
+    return{
+        type: SHOW_PRELOADER
     }
 }
 
@@ -139,20 +156,23 @@ export const openUserProfile = (idUser) => {
 
 export const updateStatus = (status) => {
     return async (dispatch) => {
+        
         let response = await profileAPI.updateStatus(status)
         if (response.resultCode === 0) {
             dispatch(setUserStatus(status));
         }
+        
     }
 }
 
 export const updateProfile = (profile) => {
     return async (dispatch) => {
-        let response = await profileAPI.updateProfile(profile)
-        debugger;
+        dispatch(showPreloader());
+        let response = await profileAPI.updateProfile(profile);
         if (response.resultCode === 0) {
-            dispatch(updateProfileJob(profile.lookingForAJob, profile.lookingForAJobDescription));
+            dispatch(updateProfileJob(profile));
         }
+        dispatch(showPreloader());
     }
 }
 
