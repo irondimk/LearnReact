@@ -18,7 +18,7 @@ const SocialNetworkIconFind = (contacts) => {
     let newArrWithIcons = iconsNameArr.map((elem, index)=> {
         let url;
         for(let key in contacts){
-            if((key == elem) && (contacts[key] != null)){
+            if((key == elem) && (contacts[key] != null) && (contacts[key] != "")){
                 if(contacts[key].indexOf("https://") == -1){
                     url = "https://" + contacts[key];
                 }
