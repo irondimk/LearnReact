@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { updateProfile } from '../redux/profile-reducer';
 
 const instance = axios.create({
     withCredentials: true,
@@ -36,6 +37,12 @@ export const profileAPI = {
                 'Content-Type': 'multipat/form-data'
             }
         })
+        .then(response => {
+            return response.data
+        })
+    },
+    updateProfile(profile){
+        return instance.put(`profile`, profile)
         .then(response => {
             return response.data
         })

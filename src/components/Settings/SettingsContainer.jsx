@@ -2,7 +2,7 @@ import {connect} from "react-redux";
 import Settings from "./Settings";
 import React, {useEffect} from 'react';
 import { LoginHOC } from "../HOC/LoginHOC";
-import { openUserProfile } from "../../redux/profile-reducer";
+import { openUserProfile, updateProfile } from "../../redux/profile-reducer";
 
 let mapStateToProps = (state) => {
     if(state.profilePage.profile == null){
@@ -15,6 +15,10 @@ let mapStateToProps = (state) => {
             lookingForAJob: state.profilePage.profile.lookingForAJob,
             lookingForAJobDescription: state.profilePage.profile.lookingForAJobDescription,
             //contacts in profile
+            contacts: state.profilePage.profile.contacts,
+
+            
+            aboutMe: state.profilePage.profile.aboutMe,
             facebook: state.profilePage.profile.contacts.facebook,
             website: state.profilePage.profile.contacts.website,
             vk: state.profilePage.profile.contacts.vk,
@@ -29,16 +33,10 @@ let mapStateToProps = (state) => {
     );
 }
 
-let SettingsContainer = connect(mapStateToProps, {})(Settings);
+let SettingsContainer = connect(mapStateToProps, {updateProfile})(Settings);
 
 
-let authMapStateToProps = (state) => {
-    return(
-        {
-            userId: state.auth.userId,
-        }
-    );
-}
+
 
 let SettingsAuthContainer = (props) => {
     useEffect(() => {
@@ -47,6 +45,14 @@ let SettingsAuthContainer = (props) => {
     })
 
     return (<SettingsContainer props={props}/>)
+}
+
+let authMapStateToProps = (state) => {
+    return(
+        {
+            userId: state.auth.userId,
+        }
+    );
 }
 
 export default LoginHOC(connect(authMapStateToProps, {openUserProfile})(SettingsAuthContainer));;

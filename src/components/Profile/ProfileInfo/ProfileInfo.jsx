@@ -63,6 +63,15 @@ const ProfileInfo = (props) => {
             </p>
           </div>
 
+
+          <div className={classes.infoBlock}>
+            {props.canEditProfile ? <NavLink to="settings" className={classes.editProfileLink}>Edit</NavLink> : <div></div>}
+            <h3 className={classes.infoTittle}>Обо мне</h3>
+            <p className={classes.description}> 
+              {props.profile.aboutMe}
+            </p>
+          </div>
+
           <div className={classes.infoBlock}>
             {props.canEditProfile ? <NavLink to="settings" className={classes.editProfileLink}>Edit</NavLink> : <div></div>}
             <h3 className={classes.infoTittle}>Работа</h3>
