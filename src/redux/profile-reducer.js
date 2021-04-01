@@ -63,7 +63,6 @@ const profileReducer = (state = initialState, action) => {
             return newState;
         }
         case SHOW_PRELOADER: {
-            debugger;
             return { ...state, isPreloaderShow: !state.isPreloaderShow}
         }
         default: return state;
