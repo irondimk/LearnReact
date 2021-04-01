@@ -58,7 +58,7 @@ const ProfileInfo = (props) => {
         
         <div className={classes.info}>
           <div className={classes.nameBlock}>
-          <p className={classes.name}>
+            <p className={classes.name}>
             {props.profile.fullName}
             </p>
           </div>
