@@ -18,7 +18,7 @@ let FindUsers = (props) => {
     
     return(
         <div className={classes.allUsersPage}>
-            <div>
+            <div className={classes.paginationString}>
             {
                 numberPages.map(elem => {
                     return(<span onClick={()=> props.pageChanged(elem)} className={props.currentPage === elem ? classes.selectedPage : classes.unselectedPage}>{elem} </span>)

@@ -3,6 +3,10 @@
     
 }
 
+.paginationString{
+    margin-bottom: 16px;
+}
+
 .userInSearch{
     display: flex;
     margin-bottom: 30px;
@@ -11,21 +15,23 @@
 
 .follow{
     display: block;
-    padding: 5px 10px;
-    background: green;
+    padding: 6px 10px;
+    background: #5A7CBD;
     color: #FFFFFF;
+    border-radius: 4px;
 }
 
 .unfollow{
     display: block;
-    padding: 5px 10px;
-    background: green;
+    padding: 6px 10px;
+    background: #5A7CBD;
     color: #FFFFFF;
+    border-radius: 4px;
 }
 
 .disabled{
     display: block;
-    padding: 5px 10px;
+    padding: 6px 10px;
     background: rgb(121, 121, 121);
     color: #FFFFFF;
 }
