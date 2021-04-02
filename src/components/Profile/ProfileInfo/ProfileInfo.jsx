@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import Preloader from '../../Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
-import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
+import ProfileStatus from './ProfileStatus/ProfileStatus';
 import SocialNetworkIconFind from './SocialNetworkIconFind';
 import InfoBlock from './InfoBlock/InfoBlock';
 import PhotoUser from './PhotoUser/PhotoUser';
@@ -14,7 +14,7 @@ const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-        <ProfileStatusWithHooks
+        <ProfileStatus
           canEditProfile={props.canEditProfile}
           status={props.status}
           updateStatus={props.updateStatus} />

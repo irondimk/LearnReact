@@ -18,7 +18,6 @@ let mapStateToProps = (state) => {
             //contacts in profile
             contacts: state.profilePage.profile.contacts,
 
-            
             aboutMe: state.profilePage.profile.aboutMe,
             facebook: state.profilePage.profile.contacts.facebook,
             website: state.profilePage.profile.contacts.website,
@@ -41,7 +40,6 @@ let SettingsContainer = connect(mapStateToProps, {updateProfile})(Settings);
 
 let SettingsAuthContainer = (props) => {
     useEffect(() => {
-        console.log(props.userId);
         props.openUserProfile(props.userId)
     })
     
