@@ -1,9 +1,6 @@
 import React from 'react';
 import classes from '../ProfileInfo.module.css';
 
-
-// let inputStatus = React.createRef();
-
 class ProfileStatus extends React.Component {
     
     state = {

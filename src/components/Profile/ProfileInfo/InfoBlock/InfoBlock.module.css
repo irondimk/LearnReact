@@ -1,0 +1,32 @@
+
+.infoBlock{
+      background: #5a7cbd;
+      padding: 8px;
+      margin-bottom: 8px;
+      position: relative;
+  }
+
+  .editProfileLink{
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      text-decoration: none;
+      color: #F1F2F8;
+      font-size: 12px;
+  }
+  
+  .editProfileLink:hover{
+      text-decoration: underline;
+  }
+
+  
+.infoTittle{
+      color: #F1F2F8;
+      font-weight: 600;
+      font-size: 17px;
+      margin-bottom: 6px;
+  }
+
+  .content{
+        
+  }

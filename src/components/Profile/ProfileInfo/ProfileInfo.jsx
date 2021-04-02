@@ -1,37 +1,12 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import Preloader from '../../Preloader/Preloader';
 import classes from './ProfileInfo.module.css';
 import ProfileStatusWithHooks from './ProfileStatus/ProfileStatusWithHooks';
-import defaultPicUserProfile from './../../../assets/images/user/userWithoutPhoto.png';
-import uploadPhotoIcon from './../../../assets/images/profile/uploadNewPhoto.png';
 import SocialNetworkIconFind from './SocialNetworkIconFind';
-import { NavLink } from 'react-router-dom';
+import InfoBlock from './InfoBlock/InfoBlock';
+import PhotoUser from './PhotoUser/PhotoUser';
 
 const ProfileInfo = (props) => {
-
-  let [uploadPhotoVisual, uploadPhotoVisualSet] = useState(false);
-  let [isSelectPhoto, setIsSelectPhoto] = useState(true);
-
-  let uploadNewPhotoUser = (e) => {
-    props.uploadUserPhoto(e.target.files[0]);
-    setIsSelectPhoto(true);
-    uploadPhotoVisualSet(false);
-  }
-
-  let userChoosePhoto = () => {
-    setIsSelectPhoto(false);
-  }
-
-  let showUploadPhotoBlock = () => {
-    uploadPhotoVisualSet(true);
-  }
-
-  let hideUploadPhotoBlock = () => {
-    if(isSelectPhoto){
-      uploadPhotoVisualSet(false);
-    }
-  }
-
 
   if (!props.profile) {
     return (<Preloader />)
@@ -39,65 +14,62 @@ const ProfileInfo = (props) => {
   return (
     <div>
       <div>
-      <ProfileStatusWithHooks canEditProfile={props.canEditProfile} status={props.status} updateStatus={props.updateStatus}/>
+        <ProfileStatusWithHooks
+          canEditProfile={props.canEditProfile}
+          status={props.status}
+          updateStatus={props.updateStatus} />
       </div>
 
       <div className={classes.wrapper}>
-      <div className={classes.photoBlock}> 
-        <img className={classes.photoUser} onMouseOver={props.canEditProfile ? showUploadPhotoBlock : null}  src={props.profile.photos.large || defaultPicUserProfile} />
-        {uploadPhotoVisual ? 
-        <label onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
-          <input onClick={userChoosePhoto}  onChange={ uploadNewPhotoUser.bind(this) } className={classes.invisibleInput} type="file"/>
-          <p>Upload <br/> new profile photo</p>
-          <img className={classes.uploadPic} src={uploadPhotoIcon} />
-          
-        </label> : 
-        <div> </div>
-        }
-      </div>
-        
+        <PhotoUser
+          canEditProfile={props.canEditProfile}
+          photo={props.profile.photos.large}
+          uploadUserPhoto={props.uploadUserPhoto}
+        />
+
         <div className={classes.info}>
           <div className={classes.nameBlock}>
             <p className={classes.name}>
-            {props.profile.fullName}
+              {props.profile.fullName}
             </p>
           </div>
 
+          <InfoBlock
+            title={"About me"}
+            canEditProfile={props.canEditProfile}
+            content={
+              <div>
+                <p className={classes.description}>
+                  {props.profile.aboutMe}
+                </p>
+              </div>
+            } />
 
-          <div className={classes.infoBlock}>
-            {props.canEditProfile ? <NavLink to="settings" className={classes.editProfileLink}>Edit</NavLink> : <div></div>}
-            <h3 className={classes.infoTittle}>Обо мне</h3>
-            <p className={classes.description}> 
-              {props.profile.aboutMe}
-            </p>
-          </div>
-
-          <div className={classes.infoBlock}>
-            {props.canEditProfile ? <NavLink to="settings" className={classes.editProfileLink}>Edit</NavLink> : <div></div>}
-            <h3 className={classes.infoTittle}>Работа</h3>
-            <p className={classes.description}> 
-              Статус поиска работы: 
-              {props.profile.lookingForAJob ? 
-              <span> Мне нужна работа</span> : 
-              <span> Уже работаю</span>} 
-            </p>
-            <p className={classes.description}> 
-              Описание:
+          <InfoBlock
+            title={"Job"}
+            canEditProfile={props.canEditProfile}
+            content={
+              <div>
+                <p className={classes.description}>
+                  Job search status :
+              {props.profile.lookingForAJob ?
+                    <span> I need a job</span> :
+                    <span> I'm already working </span>}
+                </p>
+                <p className={classes.description}>
+                  Decsription:
               <span> {props.profile.lookingForAJobDescription}</span>
-            </p>
-          </div>
-          
+                </p>
+              </div>
+            } />
 
-
-          <div className={classes.infoBlock}>
-          <h3 className={classes.infoTittle}>Мои социальные сети</h3>
-                <div className={classes.socialNetworksWrapper}>
-                {SocialNetworkIconFind(props.profile.contacts)}
-                </div>
-            
-            
-            
-          </div>
+          <InfoBlock
+            title={"My social networks "}
+            canEditProfile={props.canEditProfile}
+            content={<div className={classes.socialNetworksWrapper}>
+              {SocialNetworkIconFind(props.profile.contacts)}
+            </div>}
+          />
 
         </div>
       </div>
