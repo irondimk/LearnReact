@@ -4,6 +4,10 @@ import { Form, Field } from 'react-final-form';
 import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
 import FormStateToRedux from './../../../redux/FormStateToRedux';
 import { maxCount, required, composeValidators } from '../../../utils/validators';
+import { createPersistDecorator } from "final-form-persist";
+
+
+
 
 let MessageDialog = (props) => {
     return (
@@ -38,12 +42,22 @@ const Messages = (props) => {
         props.sendMessage(value.textMessage);
     };
 
+    const { persistDecorator, clear } = createPersistDecorator({
+        name: "myPersistKey",
+        debounceTime: 500,
+        whitelist: ["textMessage"]
+      });
+      const initialValues = {
+        name: "Hello"
+      };
+
     return (
         <div>
             <div className={classes.content}>
                 {DialogMessages}
 
                 <Form
+                decorators={[persistDecorator]}
                     onSubmit={onSubmit}
                     render={({ handleSubmit, submitting, pristine, reset, form }) => (
                         <form
