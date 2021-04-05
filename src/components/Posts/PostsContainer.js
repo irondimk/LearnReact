@@ -1,4 +1,4 @@
-import Dialogs from "./Dialogs"
+import Posts from "./Posts";
 import {connect} from "react-redux";
 import  {LoginHOC}  from "../HOC/LoginHOC";
 
@@ -8,12 +8,12 @@ const mapStateToProps = (state) => {
     }
 }
 
-let DialogsWithHOC = LoginHOC(Dialogs);
+let PostsWithHOC = LoginHOC(Posts);
 
-const DialogsContainer = connect(mapStateToProps, {})(DialogsWithHOC);
+const PostsContainer = connect(mapStateToProps, {})(PostsWithHOC);
 
 
-export default DialogsContainer;
+export default PostsContainer;
 
 
 

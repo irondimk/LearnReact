@@ -1,8 +1,8 @@
 import React from 'react';
 import classes from './Messages.module.css';
 import { Form, Field } from 'react-final-form';
-import { editTextNewMessageActionCreate, SendMessageActionCreate } from './../../../redux/dialogs-reducer';
-import FormStateToRedux from './../../../redux/FormStateToRedux';
+import { editTextNewMessageActionCreate, SendMessageActionCreate } from '../../../redux/dialogs-reducer';
+import FormStateToRedux from '../../../redux/FormStateToRedux';
 import { maxCount, required, composeValidators } from '../../../utils/validators';
 import { createPersistDecorator } from "final-form-persist";
 

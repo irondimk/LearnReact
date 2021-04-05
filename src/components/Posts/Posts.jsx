@@ -1,7 +1,7 @@
 import React from 'react';
-import classes from './Dialogs.module.css';
-import MessagesContainer from './Messages/MessagesContainer.jsx';
-const Dialogs = (props) => {
+import classes from './Posts.module.css';
+import MessagesContainer from './Posts/PostsContainer.jsx';
+const Posts = (props) => {
         return (
             <div>
                 <h2>Dialogs</h2>
@@ -12,4 +12,4 @@ const Dialogs = (props) => {
         );
 }
 
-export default Dialogs;
+export default Posts;
