@@ -12,7 +12,11 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import SettingsContainer from './components/Settings/SettingsContainer';
 //lazy load
+<<<<<<< HEAD
 const PostsContainer = React.lazy(()=> import ('./components/Posts/PostsContainer.js'));
+=======
+const PostsContainer = React.lazy(()=> import ('./components/Posts/PostsContainer'));
+>>>>>>> master
 const News = React.lazy(()=> import ('./components/News/News'));
 const Music = React.lazy(()=> import ('./components/Music/Music'));
 

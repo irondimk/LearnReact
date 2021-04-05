@@ -1,0 +1,509 @@
+[33mcommit d7258d709f470044063d610f841d32cdb7045fb1[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Apr 5 17:31:36 2021 +0700
+
+    crash build after rename page mesages
+
+[33mcommit 745bd5c4d515859941e6cefb270d1a7a71492366[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Apr 5 17:17:41 2021 +0700
+
+    delete user from dialogspage
+
+[33mcommit 62115e3f9708125e5389aa6010d48987bc61a58a[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Apr 5 17:14:28 2021 +0700
+
+    delete post page on profilepage
+
+[33mcommit 43c19fbf72a2a5e7ea2b3f366cc6452e8a4d99f6[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Apr 2 22:02:55 2021 +0700
+
+    upload preloader
+
+[33mcommit d765c14951935e2ec5c601324e3290c749e4a86c[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Apr 2 21:56:53 2021 +0700
+
+    add localstorage library and use it for message textarea
+
+[33mcommit 27d5e54bd4ac8035c3efe4ae95770ecd21d419e5[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Apr 2 21:49:39 2021 +0700
+
+    refactoring app
+
+[33mcommit 0134c0ac0a0d8257625867f9ba35d4df35174b07[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Apr 2 20:19:48 2021 +0700
+
+    show edit link to infoblock with mouseover to block
+
+[33mcommit 80e8c6e88ad599bd99467c2f3f90dc0a1f822b95[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Apr 2 19:46:42 2021 +0700
+
+    structuring the code
+
+[33mcommit 8f352ccfb873ea9556ee373d0fd9cf21f1f49806[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 18:13:59 2021 +0700
+
+    delete trash and up visual profile
+
+[33mcommit 87cdf009cfc635a26858d30c6eed8026fdab00fc[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 18:13:28 2021 +0700
+
+    add captcha to login
+
+[33mcommit 021fd301201eadd26d698bd7f6308af9ca185762[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 14:50:35 2021 +0700
+
+    some design editors
+
+[33mcommit 92c2d2396f12bafadc33b0d93a7d53dd36a9a60a[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 14:41:06 2021 +0700
+
+    settings preloader and load data profile
+
+[33mcommit 8931db772e293ae4e6fc53b08b6065d8560011a4[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 14:40:37 2021 +0700
+
+    profile some update
+
+[33mcommit 56ed8b603b9983a214b34cbc5cc54578a9b2abb5[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 12:38:32 2021 +0700
+
+    fix bug show users social networks
+
+[33mcommit 2f28cacefca287e33755bd61308a87379c8c2dcf[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Apr 1 12:38:06 2021 +0700
+
+    update profile current user
+
+[33mcommit 3dffff7914136e20d7427eeda3f8feb63fd2eb51[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 31 15:16:36 2021 +0700
+
+    set data to setting page current user
+
+[33mcommit 26231045e79e1ce5ec4b9e94f36b4a90424f6951[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 31 00:46:48 2021 +0700
+
+    show social networks on pages users
+
+[33mcommit 261197384933c337aa6d8a482b02757b6459d053[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 18:57:59 2021 +0700
+
+    relize upload profile photo
+
+[33mcommit dcea5fe5cf4bb81645c4c388351493aa6f4f1ccc[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 13:17:44 2021 +0700
+
+    visual to upload user profile photo
+
+[33mcommit d833dd45468cc7572efcbcb96fe9b132cca7e52d[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 12:32:55 2021 +0700
+
+    only user may be edit yourself status
+
+[33mcommit 90aefb96bde242de0bd021f3642267fc1b0e3a63[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 12:10:03 2021 +0700
+
+    delete trash
+
+[33mcommit dfaaeaf2131d1b1aa36267f76dc8f9c96d730108[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 12:09:24 2021 +0700
+
+    edit userProfile photo
+
+[33mcommit 816c0eaee8e12c04a8bf41501a2f285d6a464bc8[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 11:31:19 2021 +0700
+
+    load page is project
+
+[33mcommit 1b6facc02d7b86d50f7101e787616c1e1cfe7fb0[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 30 11:15:33 2021 +0700
+
+    add active class for login button
+
+[33mcommit 3fc9414fae69b64b9d6076fed5115d83190f562c[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 06:52:12 2021 +0700
+
+    customize logout button
+
+[33mcommit d6ba3fffdddb1da41afa920dd8d5f923ba43c7b9[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 06:44:10 2021 +0700
+
+    customize login button
+
+[33mcommit 95eff8082dc78dfc3b90cf991bdfef0ba7cd5be6[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 06:23:17 2021 +0700
+
+    update header navbar and content part
+
+[33mcommit f779b26ee111bdde3259b46eb8c1dd55bcd98d8b[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 02:41:59 2021 +0700
+
+    font fix navbar
+
+[33mcommit 9b36e2dba045b6fff44ba34324b462a107541117[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 02:38:05 2021 +0700
+
+    update visual header and navbar
+
+[33mcommit 1280ae9b31a1bdc6478be9efa8586df95bc7b6dd[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Mar 26 01:22:24 2021 +0700
+
+    fix bug with unauthoriz user and infinity load profile and dialogs
+
+[33mcommit 2d73232ae89101d4a6f7c04d4e4a69197d056a95[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 23 23:21:29 2021 +0700
+
+    edit router for other domain name
+
+[33mcommit 0eecde1450c91546f73818d85d9cc46569789391[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 23 22:52:52 2021 +0700
+
+    package json edit
+
+[33mcommit d2643e422e00fc353163d2a48a237d9f372a2ed1[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Mar 21 03:51:25 2021 +0700
+
+    add lazu loading for some components
+
+[33mcommit b20e8ef6e7d5f0b4d3a69e19f630b6d642c8d8e0[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Mar 21 03:22:39 2021 +0700
+
+    little paginator edit
+
+[33mcommit 0cfc600936c0954b22d4f11ab941efca95f3fa6f[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sat Mar 20 01:56:56 2021 +0700
+
+    refactoring users reducer - async/await and general function
+
+[33mcommit 195ec3537833073bad0ad291193760fc7c0d720b[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sat Mar 20 01:33:10 2021 +0700
+
+    refactoring profile reducer - async/await
+
+[33mcommit 672385f1b127a735dd0f7ea6d8adcb7d446fcf61[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sat Mar 20 01:22:44 2021 +0700
+
+    refactoring auth reducer - async/await
+
+[33mcommit d02c2e0ff6226ca3870ab2d7a96ba39805a948bd[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 17 14:52:09 2021 +0700
+
+    test find max value id posts
+
+[33mcommit bbf5dc48fecf87b45a64854dc74ad977ef5e3a53[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 17 14:32:11 2021 +0700
+
+    simple practic unit test for profile-reducer
+
+[33mcommit 66f61087aa1675e7589982a6271960b9c5a3013e[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 9 13:14:25 2021 +0700
+
+    repair profilestatus and use useeffect hook for fix
+
+[33mcommit a64252721c953e34a9c17e5885f70edee55eb7fa[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Mar 8 17:26:33 2021 +0700
+
+    first used hooks on profilestatus page
+
+[33mcommit 0982b939ceba5f102cce0efd218945c102900575[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Mar 8 07:16:17 2021 +0700
+
+    delete trash in code
+
+[33mcommit aeb30bc845647f7ca741eca719ad13d624bf18a1[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Mar 8 07:15:43 2021 +0700
+
+    repair unfollow user button
+
+[33mcommit df0d0af61c6455981ea76671fa11776cd41d561e[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Mar 8 07:04:34 2021 +0700
+
+    refactoring - delete trash
+
+[33mcommit 9bc28ffc85c320de2fd1d755ca65de6303b29bed[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 3 06:08:42 2021 +0700
+
+    full loading data when loading app
+
+[33mcommit dc7fb74222a142d9e502c2e25a8ee6ba31c1c206[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 3 04:31:11 2021 +0700
+
+    fix trouble oper userpage with url
+
+[33mcommit 029bc9b6018ec65d0e7183a9ef682c99ad492100[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 3 04:27:44 2021 +0700
+
+    standatt userpage if redirect profile page without userid
+
+[33mcommit 2ed282173abeeb9cc2c8e8a02c2087d7dccee890[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 3 04:19:39 2021 +0700
+
+    add opportunity for users move using edit url
+
+[33mcommit e3cb0deb854cb069c00158bc5386b28fce51f8e7[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Mar 3 04:09:12 2021 +0700
+
+    fix redirect from loginpage after autorization
+
+[33mcommit 8c3aecc2d16e4e6331624842a0c6e286a1aea109[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 23:49:25 2021 +0700
+
+    remove loading loginpage when user have cookie, but app reinicialization
+
+[33mcommit 44988dd0e37721c7cfb9d5affe5311b65b33fa9e[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 07:25:32 2021 +0700
+
+    add warning autorization
+
+[33mcommit 6cf97170f60b000128c1709e422bbc4986d759d2[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 07:06:00 2021 +0700
+
+    after autorization open page current user
+
+[33mcommit a8e7e8d62d37ee9f2d612b8ddfd2fc76fcd4e5d4[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 06:55:34 2021 +0700
+
+    fix bug with header when user login
+
+[33mcommit ff8d597ba36a7abd5ccf6fff7e0d03f1923f6473[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 05:28:54 2021 +0700
+
+    repair login hoc
+
+[33mcommit efd733319d1a5a6248fc9888be8b541550fb9fb6[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 04:25:44 2021 +0700
+
+    add validation sign in input add visual update
+
+[33mcommit 09ab91770fcadc4ddac861d31867dc1b365b5fa1[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 03:48:52 2021 +0700
+
+    add validation form new post on profile
+
+[33mcommit 7cb49eb394ad2191f065922b0198af447523469f[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Mar 2 03:35:21 2021 +0700
+
+    add messageinput validation
+
+[33mcommit 0fdfa1aaec2243a308253ea3a6e46357b525bedb[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Feb 28 06:51:52 2021 +0700
+
+    connect final-form-react with redux
+
+[33mcommit b964722ed7c29c53595efe18d065f1fbf5475c40[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Feb 28 06:13:15 2021 +0700
+
+    add form for message page
+
+[33mcommit a55b60914104828ce064f16d167b655ab8617c6d[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Feb 28 01:13:26 2021 +0700
+
+    edit functionaddpost to final-form-react labrary
+
+[33mcommit 70fed6884b16df541b7de96f0da3060475cea1c9[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Feb 28 00:32:11 2021 +0700
+
+    redirect loginpage to profilepage after autorization
+
+[33mcommit 2d3fc5d0dbfe7783ae6cab05a9b6cd2357b8a5be[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Feb 25 08:25:10 2021 +0700
+
+    add authorization and logout
+
+[33mcommit b7fcf3d9deb3f58cf6474facee52bb75f8a7c2c0[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Feb 24 02:40:45 2021 +0700
+
+    repair profilestatus with componentdidupdate
+
+[33mcommit f05c397b52e7a190e1e291d38b9a2155e13c9554[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Feb 24 01:13:31 2021 +0700
+
+    local state for status user
+
+[33mcommit 8f7c4f4045c0510d33409b9d68ad1a992c2a32ab[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Fri Feb 19 22:37:05 2021 +0700
+
+    react thunk and add Loginhoc for components
+
+[33mcommit e130559d552b468938dec930d361e3af084cf943[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sat Feb 13 14:48:41 2021 +0700
+
+    rest api create file
+
+[33mcommit 54badc12254512b105898c2d6a6f817cf45b34b1[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Feb 1 21:53:05 2021 +0700
+
+    add axios get for page finduser
+
+[33mcommit 1831ef82d11a70143e625bb13e97a32e9e0f7afb[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sun Jan 31 23:58:12 2021 +0700
+
+    add more stuff
+
+[33mcommit b39df185895869a5f03098b8da7cce3ac1d87705[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Mon Dec 14 20:14:25 2020 +0700
+
+    add react-redux library
+
+[33mcommit d5a147449fac70ecc5d8f30deb0cf229eb0f9871[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Dec 8 21:59:37 2020 +0700
+
+    add redux default
+
+[33mcommit 0fcd23971eb597fd90033ee605d48cc979b39637[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Sat Dec 5 23:30:11 2020 +0700
+
+    add dispatch and actioncreate
+
+[33mcommit 5255e56f03dd12d6275f419fe0603d4b9be1fc03[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Dec 2 20:42:34 2020 +0700
+
+    flux step textarea and addpost
+
+[33mcommit a793adec013b41a38762a4a9073b515324445f5b[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Thu Nov 26 14:50:27 2020 +0700
+
+    add data in index.js
+
+[33mcommit 80dd31257f6e3781642843a47b2fe53b727c3177[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 09:15:54 2020 +0700
+
+    all navbar links add
+
+[33mcommit 941855282d6f3bc1a245e8a47765f6c3283608d1[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 08:54:21 2020 +0700
+
+    navlink add
+
+[33mcommit 9986b98af5f6ea3be65c21b74d71b85a9eee03d6[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 07:17:28 2020 +0700
+
+    router items nav
+
+[33mcommit 40850689a168f7ca6f858199a720f6eb0057cfdf[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 06:42:03 2020 +0700
+
+    add dialogs page. page is empty
+
+[33mcommit 92b9ba4062885e43b16fcbb05060d0da1a95a0b6[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 03:59:34 2020 +0700
+
+    add props in posts
+
+[33mcommit e363022617a1786fd030e438b1ca5b2e51aba193[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 27 02:59:43 2020 +0700
+
+    all css files in cssmodules
+
+[33mcommit 0acc928f326c6d4a65c3ff412ce315b531108618[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Oct 21 03:50:14 2020 +0700
+
+    add module css on header
+
+[33mcommit 9ae85d560dcfc94826f6d6b786fcde3487c3986c[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Oct 21 03:35:06 2020 +0700
+
+    add styles files for all components
+
+[33mcommit 2d4634471c1cf678ba0b00c20070d1acc9b4c08d[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Oct 21 03:15:23 2020 +0700
+
+    more files with component
+
+[33mcommit ce6db3432e7241c596313dc4e3ac6b6614073331[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Wed Oct 21 02:41:03 2020 +0700
+
+    add null.css
+
+[33mcommit 8e02f6e14bf010040b86d99ef5c60bd851bab64e[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 20 06:31:06 2020 +0700
+
+    js test create function
+
+[33mcommit 3543443a0042b57b9180b24f47325317a6b2311f[m
+Author: IronDimk <irondimk@gmail.com>
+Date:   Tue Oct 20 05:34:21 2020 +0700
+
+    Initialize project using Create React App
