@@ -1,12 +1,12 @@
 import {connect} from "react-redux";
 import  {LoginHOC}  from "../HOC/LoginHOC";
-import {SendMessageActionCreate} from './../../redux/dialogs-reducer'
+import {SendMessageActionCreate} from './../../redux/posts-reducer'
 import Posts from "./Posts";
 import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
     return {
-        PostsData : state.dialogsPage.MessagesData
+        PostsData : state.postsPage.MessagesData
     }
 }
 

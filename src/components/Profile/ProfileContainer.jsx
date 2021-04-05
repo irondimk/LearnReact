@@ -14,25 +14,25 @@ class ProfileContainer extends React.Component{
     }
 
     componentDidMount(){
-        if(!this.props.match.params.userId){
-            this.props.openUserProfile(this.props.userId);
-            this.state.userProfileUOpen = true;
-        }
-        else{
+        if(this.props.match.params.userId){
             this.props.openUserProfile(this.props.match.params.userId);
             this.state.userProfileUOpen = false;
+        }
+        else{
+            this.props.openUserProfile(this.props.userId);
+            this.state.userProfileUOpen = true;
         }
     }
 
     componentDidUpdate(prevProps, prevState, snapshot){
         if(this.props.match.params.userId != prevProps.match.params.userId){
-            if(!this.props.match.params.userId){
-                this.props.openUserProfile(this.props.userId);
-                this.state.userProfileUOpen = true;
-            }
-            else{
+            if(this.props.match.params.userId){
                 this.props.openUserProfile(this.props.match.params.userId);
                 this.state.userProfileUOpen = false;
+            }
+            else{
+                this.props.openUserProfile(this.props.userId);
+                this.state.userProfileUOpen = true;
             }
         }
         

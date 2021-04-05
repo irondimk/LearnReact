@@ -17,12 +17,11 @@ let initialState = {
       username: "Iron",
       message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
     }
-  ],
-  newMessageText: 'iron'
+  ]
 }
 
 
-const dialogsReducer = (state = initialState, action)=> {
+const postsReducer = (state = initialState, action)=> {
     switch(action.type){
         case EDIT_TEXT_NEW_MESSAGE:{
           let newState = {...state};
@@ -63,4 +62,4 @@ export const editTextNewMessageActionCreate = (text) => {
     }
   }
   
-export default dialogsReducer;
+export default postsReducer;
