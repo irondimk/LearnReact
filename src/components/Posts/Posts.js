@@ -4,7 +4,7 @@ import FormNewPost from './FormNewPost';
 
 let Posts = (props) => {
 
-    let PostsArr = props.PostsData.map((elem) => {
+    let PostsArr = props.postsData.map((elem) => {
         return (
             <Post src={elem.src} username={elem.username} message={elem.message} />
         )

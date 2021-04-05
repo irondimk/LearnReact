@@ -1,20 +1,18 @@
 const EDIT_TEXT_NEW_MESSAGE = 'EDIT-TEXT-NEW-MESSAGE';
 const SEND_MESSAGE = 'SEND-MESSAGE';
+let avatar = "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png";
+
 
 let initialState = {
-  usersdialogs: [
-    { id: 1, name: "Iron" },
-    { id: 2, name: "Dimk" },
-  ],
-  MessagesData: [
+  Posts: [
     {
-      src: "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png",
+      src: avatar,
       username: "Me",
       message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
     },
     {
-      src: "https://yt3.ggpht.com/a/AATXAJz5nJXMNqg5InMP61nXvPohz_LHXsDQXr8pS7pv=s900-c-k-c0xffffffff-no-rj-mo",
-      username: "Iron",
+      src: avatar,
+      username: "Me",
       message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
     }
   ]
@@ -23,37 +21,21 @@ let initialState = {
 
 const postsReducer = (state = initialState, action)=> {
     switch(action.type){
-        case EDIT_TEXT_NEW_MESSAGE:{
-          let newState = {...state};
-          newState.usersdialogs = [...state.usersdialogs];
-          newState.MessagesData = [...state.MessagesData];
-          newState.newMessageText = action.messageText;
-          return newState;
-        }
         case SEND_MESSAGE: {
           let newState = {...state};
-          newState.usersdialogs = [...state.usersdialogs];
-          newState.MessagesData = [...state.MessagesData];
+          newState.Posts = [...state.Posts];
             let newMessage = {
-              src: "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png",
+              src: avatar,
               username: "Me",
               message: action.message
             }
-            newState.MessagesData.push(newMessage);
-            newState.newMessageText = '';
+            newState.Posts.push(newMessage);
             return newState;
         }
         default: return state;
       }
 }
 
-
-export const editTextNewMessageActionCreate = (text) => {
-    return{
-      type: EDIT_TEXT_NEW_MESSAGE,
-      messageText: text
-    }
-  }
 
   export const SendMessageActionCreate = (message) => {
     return {

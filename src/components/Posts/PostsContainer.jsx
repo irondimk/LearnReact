@@ -6,7 +6,7 @@ import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
     return {
-        PostsData : state.postsPage.MessagesData
+        postsData : state.postsPage.Posts
     }
 }
 
