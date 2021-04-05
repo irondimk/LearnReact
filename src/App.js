@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import SettingsContainer from './components/Settings/SettingsContainer';
 //lazy load
-const Dialogs = React.lazy(()=> import ('./components/Dialogs/DialogsContainer'));
+const PostsContainer = React.lazy(()=> import ('./components/Posts/PostsContainer'));
 const News = React.lazy(()=> import ('./components/News/News'));
 const Music = React.lazy(()=> import ('./components/Music/Music'));
 
@@ -32,7 +32,7 @@ return (
           <div className="content">
           <Route path='/profile/:userId?' render={() => <ProfileContainer/>} />
           <Suspense fallback={<div>Загрузка...</div>}>
-          <Route path="/dialogs" render={() => <Dialogs/>} />
+          <Route path="/posts" render={() => <PostsContainer/>} />
           <Route path="/news" render={() => <News/>} />
           <Route path="/music" render={() => <Music/>} /> 
           </Suspense>
