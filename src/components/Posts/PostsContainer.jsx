@@ -1,13 +1,12 @@
-// import Posts from "./Posts";
 import {connect} from "react-redux";
 import  {LoginHOC}  from "../HOC/LoginHOC";
-import Messages from "./Messages/Messages";
 import {SendMessageActionCreate} from './../../redux/dialogs-reducer'
+import Posts from "./Posts";
+import { compose } from 'redux';
 
 let mapStateToProps = (state) => {
     return {
-        MessagesData : state.dialogsPage.MessagesData,
-        newMessageText : state.dialogsPage.newMessageText
+        PostsData : state.dialogsPage.MessagesData
     }
 }
 
@@ -17,13 +16,9 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 
-let MessagesContainer = connect(mapStateToProps, mapDispatchToProps)(Messages);
+let PostsContainer = compose(LoginHOC, connect(mapStateToProps, mapDispatchToProps))(Posts);
 
-
-let PostsWithHOC = LoginHOC(MessagesContainer);
-
-
-export default PostsWithHOC;
+export default PostsContainer;
 
 
 

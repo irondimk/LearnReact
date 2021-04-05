@@ -1,3 +1,65 @@
-.content{
+.message{
     display: flex;
+    margin-bottom: 40px;
+}
+
+
+.user_send{
+    margin-right: 30px;
+}
+.user_send_pic_img{
+    width: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+.user_send_name{
+    text-align: center;
+}
+
+
+.user_message{
+    border: 1px solid #bebebe;
+    color: black;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+.newMessageBox{
+    border: 1px solid #bebebe;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.newMessageBoxError{
+    border: 2px solid red;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
+    height: 90px;
+    margin-bottom: 10px;
+    resize: none;
+}
+
+.sendMessage{
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #bebebe;
+    border-radius: 5px;
+    color: #000000;
+}
+
+.sendMessage:hover{
+    background: green;
+    color: #FFFFFF;
+}
+
+
+.spanError{
+    color: red;
+    font-weight: 600;
 }
