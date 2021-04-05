@@ -1,20 +1,12 @@
 import { profileAPI } from "../api/api";
 
-const ADD_POST = 'profile/ADD-POST';
-const EDIT_TEXT_NEW_POST = 'profile/EDIT-TEXT-NEW-POST';
 const SET_USER_PROFILE = 'profile/SET-USER-PROFILE';
 const SET_USER_STATUS = 'profile/SET_USER_STATUS';
-const DELETE_POST = 'profile/DELETE-POST';
 const SAVE_PHOTO_ACCESS = 'profile/SAVE_PHOTO_ACCESS';
 const UPDATE_PROFILE = 'profile/UPDATE_PROFILE';
 const SHOW_PRELOADER = 'profile/SHOW_PRELOADER';
 
 let initialState = {
-    posts: [
-        { id: 0, likes: 11, message: "Жак Фреско", avatarsrc: "https://im0-tub-ru.yandex.net/i?id=b57ab827966c1edd0748c1eb53fe6a2e&n=13&exp=1" },
-        { id: 1, likes: 99, message: "First post this", avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png" }
-    ],
-    newPostText: "irondimk",
     profile: null,
     status: "",
     isPreloaderShow: false
@@ -22,25 +14,6 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST: {
-            let newState = { ...state };
-            newState.posts = [...state.posts];
-            let newIdPost = maxIdPost(state.posts) + 1;
-            let newPost = {
-                id: newIdPost,
-                likes: 0,
-                message: action.post,
-                avatarsrc: "https://img.pngio.com/user-profile-avatar-login-account-svg-png-icon-free-download-user-profile-png-980_966.png"
-            }
-            newState.posts.push(newPost);
-            newState.newPostText = '';
-            return newState;
-        }
-        case EDIT_TEXT_NEW_POST: {
-            let newState = { ...state };
-            newState.newPostText = action.postText;
-            return newState;
-        }
         case SET_USER_PROFILE: {
             let newState = { ...state, profile: action.profile }
             return newState;
@@ -48,9 +21,6 @@ const profileReducer = (state = initialState, action) => {
         case SET_USER_STATUS: {
             let newState = { ...state, status: action.status }
             return newState;
-        }
-        case DELETE_POST: {
-            return { ...state, posts: state.posts.filter(p => p.id !== action.postId) }
         }
         case SAVE_PHOTO_ACCESS: {
             return { ...state, profile: {...state.profile, photos: action.photos} }
@@ -81,13 +51,6 @@ export const maxIdPost = (posts) => {
     return max;
 }
 
-export const deletePost = (postId) => {
-    return {
-        type: DELETE_POST,
-        postId
-    }
-}
-
 export const setUserProfile = (profile) => {
     return {
         type: SET_USER_PROFILE,
@@ -99,26 +62,6 @@ export const setUserStatus = (status) => {
     return {
         type: SET_USER_STATUS,
         status
-    }
-}
-
-export const AddPostActionCreate = () => {
-    return {
-        type: ADD_POST
-    }
-}
-
-export const AddPostActionCreateForm = (post) => {
-    return {
-        type: ADD_POST,
-        post
-    }
-}
-
-export const editTextNewPostActionCreate = (text) => {
-    return {
-        type: EDIT_TEXT_NEW_POST,
-        postText: text
     }
 }
 
