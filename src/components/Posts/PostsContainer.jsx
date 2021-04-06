@@ -1,6 +1,6 @@
 import {connect} from "react-redux";
 import  {LoginHOC}  from "../HOC/LoginHOC";
-import {SendMessageActionCreate} from './../../redux/posts-reducer'
+import {SendMessageActionCreate, removeMessage} from './../../redux/posts-reducer'
 import Posts from "./Posts";
 import { compose } from 'redux';
 
@@ -12,7 +12,8 @@ let mapStateToProps = (state) => {
 
 let mapDispatchToProps = (dispatch) => {
     return {
-        sendMessage : (message)=> {dispatch(SendMessageActionCreate(message))}
+        sendMessage : (message)=> {dispatch(SendMessageActionCreate(message))},
+        removeMessage : (idMessage) => {dispatch(removeMessage(idMessage))}
     }
 }
 

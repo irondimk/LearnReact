@@ -1,16 +1,19 @@
 const EDIT_TEXT_NEW_MESSAGE = 'EDIT-TEXT-NEW-MESSAGE';
 const SEND_MESSAGE = 'SEND-MESSAGE';
+const DELETE_MESSAGE = 'DELETE-MESSAGE';
 let avatar = "https://hostinpl.ru/templates/hos7ru/dleimages/noavatar.png";
 
 
 let initialState = {
   Posts: [
     {
+      id: 1,
       src: avatar,
       username: "Me",
       message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
     },
     {
+      id: 2,
       src: avatar,
       username: "Me",
       message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
@@ -25,6 +28,7 @@ const postsReducer = (state = initialState, action)=> {
           let newState = {...state};
           newState.Posts = [...state.Posts];
             let newMessage = {
+              id: maxIdFind(state.Posts),
               src: avatar,
               username: "Me",
               message: action.message
@@ -32,10 +36,34 @@ const postsReducer = (state = initialState, action)=> {
             newState.Posts.push(newMessage);
             return newState;
         }
+        case DELETE_MESSAGE: {
+          let newState = {...state};
+          newState.Posts = state.Posts.filter((item) => {
+            if(item.id != action.idPost){
+              return true;
+            }
+            else{
+              return false;
+            }
+          })
+          
+            return newState;
+        }
         default: return state;
       }
 }
 
+
+export let maxIdFind = (posts) => {
+  let max = posts[0].id;
+  for(let elem of posts){
+    if(elem.id > max){
+      max = elem.id;
+    } 
+  }
+  console.log(max);
+  return max;
+}
 
   export const SendMessageActionCreate = (message) => {
     return {
@@ -44,4 +72,11 @@ const postsReducer = (state = initialState, action)=> {
     }
   }
   
+  export const removeMessage = (idPost) => {
+    return {
+      type: DELETE_MESSAGE,
+      idPost
+    }
+  }
+
 export default postsReducer;

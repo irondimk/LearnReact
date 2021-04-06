@@ -6,7 +6,7 @@ let Posts = (props) => {
 
     let PostsArr = props.postsData.map((elem) => {
         return (
-            <Post src={elem.src} username={elem.username} message={elem.message} />
+            <Post id={elem.id} src={elem.src} username={elem.username} message={elem.message} remove={props.removeMessage} />
         )
     })
 

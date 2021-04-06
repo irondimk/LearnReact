@@ -1,5 +1,6 @@
 import React from 'react';
 import classes from './Post.module.css';
+import closeImg from './../../../assets/images/posts/close.png';
 
 let Post = (props) => {
     return (
@@ -14,6 +15,7 @@ let Post = (props) => {
             </div>
             <div className={classes.user_message}>
                 {props.message}
+                <img onClick={()=>props.remove(props.id)} className={classes.closeImg} src={closeImg}/>
             </div>
         </div>
     )
