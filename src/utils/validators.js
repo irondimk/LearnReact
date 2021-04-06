@@ -1,5 +1,3 @@
-
-
 export const maxCount = (maxCountValue) => (value) => {
     if(String(value).length > maxCountValue){
         return "Max value is " + maxCountValue;
@@ -9,6 +7,16 @@ export const maxCount = (maxCountValue) => (value) => {
     }
 }
     
+
+export const socialNetworkLink = (value) =>{
+    debugger;
+    if(((typeof(value) != "undefined")) && (String(value).indexOf('https://') == -1)){
+        return "uncorrect link"
+    }
+    else{
+        return undefined;
+    }
+}
 
 
 

@@ -37,11 +37,26 @@
     margin-bottom: 4px;
     display: flex;
     justify-content: space-between;
-    width: 50%;
+    width: 90%;
 }
 
 .input{
     border: 1px solid rgb(105, 105, 105);
     border-radius: 2px;
     padding: 4px;
+    width: 400px;
+    font-family: revert;
+}
+
+.submitButton{
+    padding: 4px 22px;
+    border-radius: 4px;
+    font-family: revert;
+    color: #5a7cbd;
+    font-weight: 600;
+}
+
+.submitButton[disabled]{
+    background: rgb(224, 224, 224);
+    color:#807f7f;
 }
