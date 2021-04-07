@@ -11,6 +11,7 @@
     width: 60px;
     border-radius: 50%;
     margin-bottom: 10px;
+    
 }
 .user_send_name{
     text-align: center;
@@ -66,8 +67,37 @@
 }
 
 .closeImg{
+    
+    width: 12px;
+    cursor: pointer;
+}
+
+.prompt{
+    display: inline-block;
+    width: 100px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.623);
+    color: #F1F2F8;
+    border-radius: 4px;
+    position: absolute;
+    top: -40px;
+    left: -80px;
+}
+
+.prompt::before{
+    content: "";
+
+    position: absolute;
+    left: 80px;
+    top: 26px;
+    display: block;
+    border: 10px solid transparent; /* Прозрачные границы */
+    border-top: 10px solid rgba(0, 0, 0, 0.623);
+}
+
+
+.deleteBlock{
     position: absolute;
     top: 6px;
     right: 6px;
-    width: 12px;
 }

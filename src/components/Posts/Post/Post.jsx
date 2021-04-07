@@ -1,8 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
 import classes from './Post.module.css';
 import closeImg from './../../../assets/images/posts/close.png';
 
 let Post = (props) => {
+    let [isShowPromptClose, setIsShowPromptClose] = useState(false);
+
+    let showPromptClose = () => {
+        setIsShowPromptClose(!isShowPromptClose);
+    }
+
     return (
         <div className={classes.message}>
             <div className={classes.user_send}>
@@ -15,7 +21,15 @@ let Post = (props) => {
             </div>
             <div className={classes.user_message}>
                 {props.message}
-                <img onClick={()=>props.remove(props.id)} className={classes.closeImg} src={closeImg}/>
+                <div className={classes.deleteBlock}>
+                <img onClick={()=>props.remove(props.id)} onMouseOver={showPromptClose} onMouseOut={showPromptClose} className={classes.closeImg} src={closeImg}/>
+                {isShowPromptClose? 
+                <div className={classes.prompt}>Delete post</div>
+                :
+                <></>
+                }
+                </div>
+                
             </div>
         </div>
     )
