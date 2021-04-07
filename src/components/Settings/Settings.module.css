@@ -1,7 +1,7 @@
 .settingBlock{
     background: #5a7cbd;
     padding: 8px;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 
@@ -24,6 +24,7 @@
 
 .label{
     color: #F1F2F8;
+    margin-top: 6px;
 }
 
 .textArea{
@@ -31,15 +32,21 @@
     border: 1px solid rgb(105, 105, 105);
     border-radius: 2px;
     padding: 4px;
+    width: 100%;
+    margin-bottom: 16px;
+    margin-top: 6px;
 }
 
 .inputForm{
-    margin-bottom: 4px;
+    margin-bottom: 8px;
     display: flex;
     justify-content: space-between;
     width: 90%;
+    position: relative;
 }
-
+.inputBlock{
+    position: relative;
+}
 .input{
     border: 1px solid rgb(105, 105, 105);
     border-radius: 2px;
@@ -59,4 +66,15 @@
 .submitButton[disabled]{
     background: rgb(224, 224, 224);
     color:#807f7f;
+}
+
+.checkboxLookingJob{
+    margin-bottom: 8px;
+}
+
+.validError{
+    position: absolute;
+    right: 4px;
+    top: 8px;
+    color: red;
 }

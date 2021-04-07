@@ -90,7 +90,7 @@ const Settings = (props) => {
           {({ handleSubmit, form, submitting, pristine }) => (
             <form onSubmit={handleSubmit}>
               <FormStateToRedux form="example" />
-              <div>
+              <div className={classes.checkboxLookingJob}>
                 <label class={classes.label}>I am looking for a job </label>
                 <Field
                   name="isNeedWork"
@@ -108,9 +108,12 @@ const Settings = (props) => {
                   {({ input, meta }) => (
                     <div>
                       <label class={classes.label}>What you need to know about me at job </label>
+                      <div className={classes.inputBlock}>
                       <textArea {...input} className={classes.textArea} type="textarea" placeholder="" />
-                      {meta.error && meta.touched && <span>{meta.error}</span>}
-                    </div>
+                      {meta.error && meta.touched && <span className={classes.validError}>{meta.error}</span>}
+                    
+                      </div>
+                      </div>
                   )}
                 </Field>
               </div>
