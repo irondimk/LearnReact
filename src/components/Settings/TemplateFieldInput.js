@@ -15,7 +15,7 @@ let TemplateFieldInput = (props) => {
               <div className={classes.inputForm}>
                 <label class={classes.label}>{props.description}</label>
                 <div className={classes.inputBlock}>
-                <input {...input} className = {classes.input} type="textarea" placeholder="" /> 
+                <input {...input} className = {classes.input} placeholder="" /> 
                 {meta.error && meta.touched && <span className={classes.validError}>{meta.error}</span>}
                 </div>
                 

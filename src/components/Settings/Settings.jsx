@@ -6,7 +6,6 @@ import { composeValidators, maxCount, required, socialNetworkLink } from '../../
 import Preloader from '../Preloader/Preloader';
 import TemplateFieldInput from './TemplateFieldInput';
 const Settings = (props) => {
-
   let onSubmit = (values) => {
     let profile = {
       aboutMe: props.aboutMe,
@@ -78,7 +77,6 @@ const Settings = (props) => {
 
 
 
-
       <div className={classes.settingBlock}>
         <h3 className={classes.tittle}>About work</h3>
 
@@ -102,6 +100,7 @@ const Settings = (props) => {
 
                 <Field
                   name="lookingForAJobDescription"
+                  component="input"
                   type="text"
                   validate={maxCount(90)}
                 >
@@ -109,7 +108,7 @@ const Settings = (props) => {
                     <div>
                       <label class={classes.label}>What you need to know about me at job </label>
                       <div className={classes.inputBlock}>
-                      <textArea {...input} className={classes.textArea} type="textarea" placeholder="" />
+                      <textarea {...input} className={classes.textArea} placeholder="" />
                       {meta.error && meta.touched && <span className={classes.validError}>{meta.error}</span>}
                     
                       </div>
