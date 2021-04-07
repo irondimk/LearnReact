@@ -18,10 +18,12 @@
       text-decoration: none;
       color: #F1F2F8;
       font-size: 12px;
+      
   }
   
   .editProfileLink:hover{
       text-decoration: underline;
+      
   }
 
   
@@ -35,3 +37,26 @@
   .content{
         
   }
+
+  .prompt{
+    display: inline-block;
+    width: 100px;
+    padding: 6px 12px;
+    background: rgba(0, 0, 0, 0.623);
+    color: #F1F2F8;
+    border-radius: 4px;
+    position: absolute;
+    top: -40px;
+    right: 0;
+}
+
+.prompt::before{
+    content: "";
+
+    position: absolute;
+    left: 80px;
+    top: 26px;
+    display: block;
+    border: 10px solid transparent;
+    border-top: 10px solid rgba(0, 0, 0, 0.623);
+}

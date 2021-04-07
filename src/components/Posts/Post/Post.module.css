@@ -91,7 +91,7 @@
     left: 80px;
     top: 26px;
     display: block;
-    border: 10px solid transparent; /* Прозрачные границы */
+    border: 10px solid transparent;
     border-top: 10px solid rgba(0, 0, 0, 0.623);
 }
 
