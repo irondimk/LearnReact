@@ -28,12 +28,13 @@ const postsReducer = (state = initialState, action)=> {
           let newState = {...state};
           newState.Posts = [...state.Posts];
             let newMessage = {
-              id: maxIdFind(state.Posts),
+              id: maxIdFind(state.Posts) + 1,
               src: avatar,
               username: "Me",
               message: action.message
             }
             newState.Posts.push(newMessage);
+            debugger;
             return newState;
         }
         case DELETE_MESSAGE: {
@@ -55,6 +56,9 @@ const postsReducer = (state = initialState, action)=> {
 
 
 export let maxIdFind = (posts) => {
+  if(posts.length == 0){
+    return 0;
+  }
   let max = posts[0].id;
   for(let elem of posts){
     if(elem.id > max){
@@ -66,6 +70,7 @@ export let maxIdFind = (posts) => {
 }
 
   export const SendMessageActionCreate = (message) => {
+    debugger;
     return {
       type: SEND_MESSAGE,
       message
