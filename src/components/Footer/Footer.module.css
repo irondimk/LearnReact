@@ -1,0 +1,13 @@
+.wrapper{
+    width: 900px;
+    margin: 0 auto;
+    background: #5a7cbd;
+    padding: 20px 0;
+}
+
+.text{
+    margin: 0 auto;
+    width: 40%;
+    align-content: center;
+    color: #F1F2F8;
+}
