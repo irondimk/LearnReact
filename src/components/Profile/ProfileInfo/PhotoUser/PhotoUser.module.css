@@ -35,3 +35,35 @@
     height: 100px;
     opacity: 0.7;
 }
+
+@media(max-width: 1200px) {
+
+}
+@media(max-width: 992px) {
+
+}
+@media(max-width: 767px) {
+
+    .photoBlock{
+        width: 30%;
+    }
+    .photoUser{
+        width: 100%;
+        height: 100%;
+    }
+
+    .uploadProfilePhotoBlock{
+        width: 100%;
+        height: 100%;
+        left: 0px;
+         top: 0px;
+    }
+    .uploadPic{
+        width: 40px;
+        height: 40px;
+    }
+
+    .uploadText{
+        font-size: 14px;
+    }
+}

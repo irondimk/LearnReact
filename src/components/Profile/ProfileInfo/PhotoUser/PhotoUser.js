@@ -34,7 +34,7 @@ let PhotoUser = (props) => {
         {uploadPhotoVisual ? 
         <label onMouseOut={hideUploadPhotoBlock} className={classes.uploadProfilePhotoBlock}> 
           <input onClick={userChoosePhoto}  onChange={ uploadNewPhotoUser.bind(this) } className={classes.invisibleInput} type="file"/>
-          <p>Upload <br/> new profile photo</p>
+          <p className={classes.uploadText}>Upload <br/> new profile photo</p>
           <img className={classes.uploadPic} src={uploadPhotoIcon} />
           
         </label> : 

@@ -34,7 +34,6 @@ const postsReducer = (state = initialState, action)=> {
               message: action.message
             }
             newState.Posts.push(newMessage);
-            debugger;
             return newState;
         }
         case DELETE_MESSAGE: {
@@ -70,7 +69,6 @@ export let maxIdFind = (posts) => {
 }
 
   export const SendMessageActionCreate = (message) => {
-    debugger;
     return {
       type: SEND_MESSAGE,
       message
