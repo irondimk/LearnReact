@@ -26,5 +26,8 @@
     .wrapper{
       max-width: none;
     }
-   
+   .text{
+     width: 100%;
+     padding: 10px;
+   }
   }
