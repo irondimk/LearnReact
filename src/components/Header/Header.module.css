@@ -1,5 +1,6 @@
   .image{
     width: 80px;
+    height: 80px;
     margin-left: 40px;
   }
   
@@ -13,7 +14,24 @@
     display: flex;
     justify-content: space-between;
   }
-
+  .imagesWrapper{
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+  }
+.hamburgerMenuBlock{
+  padding: 5px 10px;
+  border: 2px solid #F1F2F8;
+  border-radius: 8px;
+  display: none;
+}
+.hamburgerMenuImg{
+  width: 40px;
+  height: 40px;
+  color: red;
+  margin-top: 10px;
+  margin-bottom: 3px;
+}
   .loginButton{
     padding: 6px 12px;
     background: #F1F2F8;
@@ -76,7 +94,16 @@
     color: #5a7cbd;
     border-radius: 5px 5px 0 0;
   }
-
+.mobileNavbar{
+  padding: 10px;
+  /* width: 110px; */
+  position: absolute;
+  background: #5a7cbd;
+  z-index: 1;
+  top: 70px;
+  left: -10px;
+  border-radius: 4px;
+}
 
   @media(max-width: 1200px) {
     .wrapper{
@@ -92,5 +119,8 @@
     .wrapper{
       max-width: none;
     }
-   
+
+   .hamburgerMenuBlock{
+     display: inline-block;
+   }
   }

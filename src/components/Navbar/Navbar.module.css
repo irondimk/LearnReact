@@ -1,11 +1,7 @@
 /* @import './../../utils/fonts.css'; */
 
 
-.nav{
-    background:#5a7cbd;
-    padding: 10px 0 10px 10px;
-    width: 26%;
-  }
+
   
   .ul{
     /* text-decoration: none; */
@@ -38,3 +34,9 @@
     background: #F1F2F8;
     color: #5a7cbd;
   }
+
+  /* @media(max-width: 767px) {
+    .nav{
+      display: none;
+    }
+  } */

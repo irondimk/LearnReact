@@ -12,6 +12,7 @@ import { connect } from 'react-redux';
 import { compose } from 'redux';
 import SettingsContainer from './components/Settings/SettingsContainer';
 import Footer from './components/Footer/Footer';
+// import classes from '*.module.css';
 //lazy load
 const PostsContainer = React.lazy(()=> import ('./components/Posts/PostsContainer'));
 const News = React.lazy(()=> import ('./components/News/News'));
@@ -29,7 +30,7 @@ return (
         <div className="main">
         <HeaderContainer/>
         <div className="wrapper center">
-          <Navbar />
+          <Navbar className="navbar"/>
           <div className="content">
           <Route path='/profile/:userId?' render={() => <ProfileContainer/>} />
           <Suspense fallback={<div>Загрузка...</div>}>

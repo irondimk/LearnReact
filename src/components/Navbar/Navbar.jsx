@@ -3,9 +3,9 @@ import classes from './Navbar.module.css';
 import './../null.css';
 import { NavLink } from 'react-router-dom';
 
-function Navbar() {
+function Navbar(props) {
     return (
-        <nav className={classes.nav}>
+        <nav className={props.className}>
             <ul className={classes.ul}>
                 <li className={classes.item}><NavLink to="/profile" activeClassName={classes.activelink} className={classes.link}>Profile</NavLink></li>
                 <li className={classes.item}><NavLink to="/posts" activeClassName={classes.activelink} className={classes.link}>Posts</NavLink></li>

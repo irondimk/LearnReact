@@ -10,6 +10,11 @@
   background: #5a7cbd;
 }
 
+.navbar{
+    background:#5a7cbd;
+    padding: 10px 0 10px 10px;
+    width: 26%;
+}
 
 .content{
   width: 100%;
@@ -38,5 +43,7 @@
   .wrapper{
     max-width: none;
   }
-  
+  .navbar{
+    display: none;
+  }
 }
