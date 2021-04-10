@@ -78,3 +78,17 @@
     top: 8px;
     color: red;
 }
+
+@media(max-width: 430px) {
+    .submitButton{
+        width: 100%;
+        padding: 10px;
+    }
+    .inputForm{
+        width: 100%;
+        flex-direction: column;
+    }
+    .input{
+        width: 100%;
+    }
+  }
