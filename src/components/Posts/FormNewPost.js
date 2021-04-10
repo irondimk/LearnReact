@@ -40,7 +40,7 @@ let FormNewPost = (props) => {
                                 )}
                             
                             </Field>
-                            </div><div><button className={classes.sendMessage} type="submit" disabled={submitting || pristine}>
+                            </div><div><button className={classes.submitButton} type="submit" disabled={submitting || pristine}>
                                     Send
                 </button>
 

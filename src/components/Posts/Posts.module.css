@@ -63,3 +63,24 @@
     color: red;
     font-weight: 600;
 }
+
+.submitButton{
+    padding: 4px 22px;
+    border-radius: 4px;
+    font-family: revert;
+    color: #5a7cbd;
+    font-weight: 600;
+    border: 1px solid #807f7f;
+}
+
+.submitButton[disabled]{
+    background: rgb(224, 224, 224);
+    color:#807f7f;
+}
+
+@media(max-width: 767px) {
+    .submitButton{
+        width: 100%;
+        padding: 10px;
+    }
+  }
