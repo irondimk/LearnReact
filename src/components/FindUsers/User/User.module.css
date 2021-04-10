@@ -47,18 +47,20 @@
 }
 
 .aboutUser{
-    border: 1px solid grey;
+    border: 1px solid #5A7CBD;
     width: 100%;
     border-radius: 5px;
     margin-left: 10px;
     padding: 10px;
 }
 
-.top{
+.name{
     display: flex;
     justify-content: space-between;
     font-weight: bold;
     font-size: 19px;
+    border-bottom: 1px solid #5A7CBD;
+    padding: 4px;
 }
 
 .city{
@@ -67,9 +69,14 @@
 }
 
 .status{
-    margin-top: 40px;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
 }
 
+.labelStatus{
+    border-bottom: 1px solid #5A7CBD;
+}
 
 .selectedPage{
     font-weight: 700;
@@ -90,3 +97,33 @@
     top: 0;
     left: 50px;
 }
+
+@media(max-width: 430px) {
+
+    .aboutUser{
+        margin-left: 0;
+    }
+    .userInSearch{
+        flex-direction: column;
+        border: 1px solid #5A7CBD;
+        border-radius: 6px;
+    }
+    .follow{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 6px;
+    }
+    .unfollow{
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 6px;
+    }
+    .userLink{
+        text-align: center;
+display: block;
+margin-top: 8px;
+    }
+    .aboutUser{
+        border: 0
+    }
+  }

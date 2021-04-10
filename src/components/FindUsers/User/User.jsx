@@ -13,7 +13,7 @@ let User = (props) => {
     return (
         <div className={classes.userInSearch}>
             <div>
-                <NavLink to={'profile/' + props.id}>
+                <NavLink to={'profile/' + props.id} className={classes.userLink}>
                 {props.photos.small ? <img src={props.photos.small} alt="" className={classes.avatar}/>
                 :  <img src={defaultPicUserProfile} alt="" className={classes.avatar}/>
                 }
@@ -29,15 +29,8 @@ let User = (props) => {
                 }
             </div>
             <div className={classes.aboutUser}>
-                <div className={classes.top}>
-                    <div>
+                <div className={classes.name}>
                     {props.name}
-                    </div>
-                   
-                    <div>
-                    </div>
-                </div>
-                <div className={classes.city}>
                 </div>
                 <div className={classes.status}>
                 {props.status}
