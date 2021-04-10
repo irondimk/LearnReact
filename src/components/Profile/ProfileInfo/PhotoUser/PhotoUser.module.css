@@ -67,3 +67,31 @@
         font-size: 14px;
     }
 }
+
+@media(max-width: 430px) {
+
+    .photoBlock{
+        width: 100%;
+        margin-bottom: 8px;
+    }
+    .photoUser{
+        width: 100%;
+        height: 100%;
+    }
+
+    .uploadProfilePhotoBlock{
+        width: 100%;
+        height: 100%;
+        left: 0px;
+         top: 0px;
+    }
+    .uploadPic{
+        width: 40px;
+        height: 40px;
+    }
+
+    .uploadText{
+        font-size: 14px;
+    }
+    
+  }
