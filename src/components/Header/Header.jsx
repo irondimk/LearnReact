@@ -17,7 +17,6 @@ class Header extends React.Component{
     }
 
     componentDidMount(){
-        debugger;
         this.state.isAuth = this.props.isAuth;
         this.state.login = this.props.login
     }
