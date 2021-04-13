@@ -10,13 +10,13 @@ let initialState = {
       id: 1,
       src: avatar,
       username: "Me",
-      message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
+      message: "Post 1 in global state redux"
     },
     {
       id: 2,
       src: avatar,
       username: "Me",
-      message: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae."
+      message: "Post 2 in global state redux... Post 2 in gloval state redux... Post 2 in global state redux... Post 2 in global state redux... Post 2 in global state redux... "
     }
   ]
 }
