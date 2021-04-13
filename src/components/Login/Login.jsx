@@ -22,9 +22,9 @@ class Login extends React.Component {
                 <div>
                     <h2 className={classes.title}>Sign in</h2>
                     <Form
-
                         onSubmit={this.onSubmit}
-                        render={({ handleSubmit, submitting, pristine }) => (
+                        render={({ handleSubmit, submitting, pristine }) => 
+                        (
                             <form onSubmit={handleSubmit} className={classes.form}>
                                 <div>
                                     <Field name={"login"} id={"Login"} validate={composeValidators(required, maxCount(30))} >
@@ -46,7 +46,7 @@ class Login extends React.Component {
                                         </div>
                                     )}
                                 </Field>
-                                {this.props.captcha ? 
+                                {this.props.captcha && 
                                 <Field name={"captcha"} id={"captcha"} >
                                     {({ input, meta }) => (
                                         <div className={classes.captchaDiv}>
@@ -55,27 +55,29 @@ class Login extends React.Component {
                                             {meta.error && meta.touched && <span className={classes.errorSpan}>{meta.error}</span>}
                                         </div>
                                     )}
-                                </Field> : <> </>
-                            }
+                                </Field>
+                                }
                                 <div className={classes.inputDiv}>
                                     <span>
                                         <Field id={"rememberMeCheckbox"} type={"checkbox"} name={"rememberme"} component={"input"} />
                                         <label for={"rememberMeCheckbox"}>Remember me</label>
                                     </span>
                                 </div>
-                                {this.props.lastTryIsFalse ? <div className={classes.errorDiv}><span className={classes.errorAutorization}>Uncorrect login or password</span></div> :
-                                    <div> </div>}
-
-                                <div ><button className={classes.submit} type="submit" disabled={submitting || pristine}>
+                                {this.props.lastTryIsFalse && 
+                                <div className={classes.errorDiv}>
+                                    <span className={classes.errorAutorization}>
+                                        Uncorrect login or password
+                                    </span>
+                                </div>}
+                                <div>
+                                    <button className={classes.submit} type="submit" disabled={submitting || pristine}>
                                     Submit
-                </button></div>
+                                    </button>
+                                </div>
                             </form>
-
-
                         )}
                     />
                 </div>
-
             </div>
         )
     }

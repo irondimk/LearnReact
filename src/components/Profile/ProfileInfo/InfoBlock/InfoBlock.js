@@ -29,14 +29,17 @@ let InfoBlock = (props) => {
         onMouseLeave={props.canEditProfile ? hideEditLink: null}
         >
 
-          {isShowLinkEdit ? 
-            <div>
-          <NavLink to="settings" className={classes.editProfileLink} onMouseOver={showEditPrompt}
-          onMouseOut={hideEditPrompt}>Edit</NavLink>
-          {isShowEditPrompt? <div className={classes.prompt}>Edit profile</div> : <> </> }
-           
-           </div> : 
-          <></>}
+          {isShowLinkEdit && 
+          <div>
+            <NavLink to="settings" className={classes.editProfileLink} onMouseOver={showEditPrompt}
+            onMouseOut={hideEditPrompt}>
+              Edit
+            </NavLink>
+            {isShowEditPrompt && 
+            <div className={classes.prompt}>
+              Edit profile
+            </div>}
+          </div>}
           <h3 className={classes.infoTittle}>{props.title}</h3>
           <div className={classes.content}>
             {props.content}

@@ -22,12 +22,10 @@ let Post = (props) => {
             <div className={classes.user_message}>
                 {props.message}
                 <div className={classes.deleteBlock}>
-                <img onClick={()=>props.remove(props.id)} onMouseOver={showPromptClose} onMouseOut={showPromptClose} className={classes.closeImg} src={closeImg}/>
-                {isShowPromptClose? 
-                <div className={classes.prompt}>Delete post</div>
-                :
-                <></>
-                }
+                    <img onClick={()=>props.remove(props.id)} onMouseOver={showPromptClose} onMouseOut={showPromptClose} className={classes.closeImg} src={closeImg}/>
+                    {isShowPromptClose && 
+                    <div className={classes.prompt}>Delete post</div>
+                    }
                 </div>
                 
             </div>
