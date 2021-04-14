@@ -9,7 +9,11 @@ export const maxCount = (maxCountValue) => (value) => {
     
 
 export const socialNetworkLink = (value) =>{
-    if(((typeof(value) != "undefined")) && (String(value).indexOf('https://') == -1)){
+    // debugger;
+    if(value == null){
+        return undefined;
+    }
+    if((((typeof(value) != "undefined")) && (String(value).indexOf('https://') == -1)) || (value == null)){
         return "Incorrect link"
     }
     else{
