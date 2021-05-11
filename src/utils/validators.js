@@ -9,7 +9,6 @@ export const maxCount = (maxCountValue) => (value) => {
     
 
 export const socialNetworkLink = (value) =>{
-    // debugger;
     if(value == null){
         return undefined;
     }

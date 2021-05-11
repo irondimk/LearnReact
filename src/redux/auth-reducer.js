@@ -13,7 +13,8 @@ let initialState = {
     isAuth: false,
     lastTryIsFalse: false,
     isLoadComplete: false,
-    captcha: null
+    captcha: null,
+    profile: null
   }
 
 const authReducer = (state = initialState, action) => {

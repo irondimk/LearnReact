@@ -6,6 +6,7 @@ import { composeValidators, maxCount, required, socialNetworkLink } from '../../
 import Preloader from '../Preloader/Preloader';
 import TemplateFieldInput from './TemplateFieldInput';
 const Settings = (props) => {
+  debugger;
   let onSubmit = (values) => {
     let profile = {
       aboutMe: props.aboutMe,
@@ -71,7 +72,6 @@ const Settings = (props) => {
             </form>
           )}
         </Form>
-
       </div>
 
 
@@ -79,7 +79,6 @@ const Settings = (props) => {
 
       <div className={classes.settingBlock}>
         <h3 className={classes.tittle}>About work</h3>
-
         <Form
           onSubmit={onSubmit}
           initialValues={{ isNeedWork: props.lookingForAJob, lookingForAJobDescription: props.lookingForAJobDescription }}
@@ -116,7 +115,6 @@ const Settings = (props) => {
                   )}
                 </Field>
               </div>
-
 
               <div className="buttons">
                 <button type="submit" disabled={submitting || pristine} className={classes.submitButton}>
@@ -168,12 +166,8 @@ const Settings = (props) => {
             </form>
           )}
         </Form>
-
       </div>
-
-
     </div>
-
   );
 }
 

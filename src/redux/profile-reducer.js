@@ -33,7 +33,7 @@ const profileReducer = (state = initialState, action) => {
             return newState;
         }
         case SHOW_PRELOADER: {
-            return { ...state, isPreloaderShow: !state.isPreloaderShow}
+            return { ...state, isPreloaderShow: action.preloaderStatus}
         }
         default: return state;
     }
@@ -52,6 +52,7 @@ export const maxIdPost = (posts) => {
 }
 
 export const setUserProfile = (profile) => {
+    console.log("counter");
     return {
         type: SET_USER_PROFILE,
         profile
@@ -79,19 +80,22 @@ export const updateProfileJob = (profile) => {
     }
 }
 
-const showPreloader = () => {
+const showPreloader = (preloaderStatus) => {
     return{
+        preloaderStatus,
         type: SHOW_PRELOADER
     }
 }
 
 export const openUserProfile = (idUser) => {
-   
+    console.log("PIZXDEC2");
     return async (dispatch) => {
+        dispatch(showPreloader(true));
         let response = await profileAPI.userProfile(idUser);
         dispatch(setUserProfile(response));
         response = await profileAPI.getStatus(idUser);
         dispatch(setUserStatus(response));
+        dispatch(showPreloader(false));
     }
 }
 

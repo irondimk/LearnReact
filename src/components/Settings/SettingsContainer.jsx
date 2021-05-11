@@ -40,13 +40,15 @@ let SettingsContainer = connect(mapStateToProps, {updateProfile})(Settings);
 
 let SettingsAuthContainer = (props) => {
     useEffect(() => {
+        console.log("PIZDEC");
         props.openUserProfile(props.userId)
-    })
+    },[props.userId])
     
     return (
-    <>
-    {props.isPreloaderShow ? <Preloader/> : <SettingsContainer props={props}/> }
+        <>
+        {props.isPreloaderShow ? <Preloader/> : <SettingsContainer props={props}/> }
     </>
+    
     )
 }
 
