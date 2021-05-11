@@ -27,3 +27,9 @@ Api: https://social-network.samuraijs.com/docs
 
 ### `npm start`
 
+## Авторизация
+
+| login  	| password 	|
+|--------	|----------	|
+| irondimk@gmail.com   	| irondimk     	| 
+
